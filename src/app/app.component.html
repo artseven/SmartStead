@@ -1,30 +1,22 @@
 <md-toolbar color="primary">
 
-  <span>MyCompany</span>
-
-    <span class="example-spacer"></span>
-    <button md-button [mdMenuTriggerFor]='appMenu'><md-icon>menu</md-icon></button>
+  <span>HomeStead</span>
+  <span class="spacer"></span>
+  <button md-button [mdMenuTriggerFor]='appMenu'><md-icon>menu</md-icon></button>
 
 </md-toolbar>
 
 <md-menu #appMenu="mdMenu">
-  <button md-menu-item> Log In </button>
-  <button md-menu-item> Settings</button>
-  <button md-menu-item> Log Out </button>
+  <button md-menu-item>
+    <md-icon>fingerprint</md-icon>
+    <span>Log In</span>
+  </button>
+  <button md-menu-item>
+    <md-icon>settings</md-icon>
+    <span>Settings</span>
+  </button>
+  <button md-menu-item>
+    <md-icon>logout-variant</md-icon>
+    <span>Log Out</span>
+  </button>
 </md-menu>
-
-
-
-
-<!-- <md-card class="example-menu" *ngFor="let data of (myData ? myData.slice(0,10) : []); let i = index">
-
-<img md-card-image src="{{ data.url }}">
-  <md-card-header>
-    <md-card-title> {{ data.title }}</md-card-title>
-  </md-card-header>
-
-  <md-card-actions>
-    <button md-button> LIKE </button>
-    <button md-button> SHARE </button>
-  </md-card-actions>
-</md-card> -->
