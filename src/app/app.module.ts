@@ -11,6 +11,7 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 import { CameraComponent } from './camera/camera.component';
 import { ACComponent } from './ac/ac.component';
 import { LightsComponent } from './lights/lights.component';
+import { TabsComponent } from './tabs/tabs.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LightsComponent } from './lights/lights.component';
     SideMenuComponent,
     CameraComponent,
     ACComponent,
-    LightsComponent
+    LightsComponent,
+    TabsComponent
   ],
   imports: [
     BrowserModule,
