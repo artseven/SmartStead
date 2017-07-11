@@ -1,7 +1,7 @@
-<md-toolbar color="primary">
+<md-toolbar color="black">
   <span>SmartStead</span>
-  <span class="spacer"></span>
-  <button md-button [mdMenuTriggerFor]='appMenu'>
+  <!-- <span class="spacer"></span> -->
+  <button md-button class="main-menu-icon" [mdMenuTriggerFor]='appMenu'>
     <md-icon>menu</md-icon>
   </button>
   <md-menu #appMenu="mdMenu">
@@ -14,9 +14,10 @@
       <span>Settings</span>
     </button>
     <button md-menu-item>
-      <md-icon>logout-variant</md-icon>
-      <span>Log Out</span>
+      <md-icon style="color:red">close</md-icon>
+      <span style="color:red">Log Out</span>
     </button>
   </md-menu>
 </md-toolbar>
+<!-- <app-ac></app-ac> -->
 <app-tabs></app-tabs>
