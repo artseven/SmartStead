@@ -19,14 +19,17 @@
     </button>
   </md-menu>
 </md-toolbar>
-<!-- <app-side-menu></app-side-menu> -->
+<app-side-menu></app-side-menu>
 <!-- <app-ac></app-ac> -->
-<div class="thing-to-move"
- (panstart)="onPanStart($event)"
- (panmove)="onPan($event)"> Move Me! </div>
+<!-- <div class="md-content" flex md-scroll-y (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)">
 
- <div [style.marginLeft.px]="x" [style.marginTop.px]="y" ...>
-  <div>Move Me!</div>
-  <div>({{x}}, {{y}})</div>
-</div>
+   <md-tab-group md-stretch-tabs [(selectedIndex)]="selectedIndex" (selectedIndexChange)="selectChange()">
+           <md-tab>
+              (...) //Content Tab 1
+           </md-tab>
+           <md-tab>
+              (...) //Content Tab 2
+           </md-tab>
+   </md-tab-group>
+</div> -->
 <app-tabs></app-tabs>

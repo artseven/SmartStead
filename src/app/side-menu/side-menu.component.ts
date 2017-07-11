@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-side-menu',
@@ -6,6 +6,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-menu.component.css']
 })
 export class SideMenuComponent implements OnInit {
+  selectedIndex: number = 1;
+  selectChange(): void{
+    console.log("Selected INDEX: " + this.selectedIndex);
+  }
+
+  SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
+
+  // Action triggered when user swipes
+  swipe(selectedIndex: number, action = '') {
+    // Out of range
+    // if (this.selectedIndex < 0 || this.selectedIndex > 1 ) return;
+
+    // Swipe left, next tab
+    if (action === this.SWIPE_ACTION.LEFT) {
+      // this.sidenav.close();
+      // const isLast = this.selectedIndex === 1;
+      // this.selectedIndex = isLast ? 0 : this.selectedIndex + 1;
+      // console.log("Swipe right - INDEX: " + this.selectedIndex);
+      console.log("SWIPED LEFT!")
+    }
+
+    // Swipe right, previous tab
+    if (action === this.SWIPE_ACTION.RIGHT) {
+      // this.sidenav.open();
+      console.log("SWIPED RIGHT!")
+
+    }
+  }
 
   constructor() { }
 
