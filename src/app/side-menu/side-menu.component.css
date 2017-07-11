@@ -1,17 +1,25 @@
 .example-container {
   width: auto;
   height: 400px;
-
 }
 
 .example-sidenav-content {
   display: flex;
   height: 100%;
+  width: 100%;
   align-items: center;
+  padding: 5px;
   justify-content: center;
 }
 
 .sidenav {
-  padding: 20px;
-  width: 20%;
+  width: 120px;
+  opacity: 0.6;
+}
+
+.btn-sidemenu {
+  background-color: #00abff;
+  width: 120px;
+  opacity: 0.6;
+
 }

@@ -1,11 +1,17 @@
 <md-sidenav-container class="example-container"
   flex md-scroll-y (swipeleft)="swipe(idx, $event.type)"
   (swiperight)="swipe(idx, $event.type)">
-  <md-sidenav mode="over" #sidenav class="sidenav">
-    <a class="waves-effect waves-blue btn-flat">Button</a>
+  <md-sidenav mode="side" #sidenav class="sidenav">
+    <a class="waves-effect waves-blue btn-large btn-sidemenu">Button</a>
+    <a class="waves-effect waves-blue btn-large btn-sidemenu">Button</a>
+    <a class="waves-effect waves-blue btn-large btn-sidemenu">Button</a>
+    <a class="waves-effect waves-blue btn-large btn-sidemenu">Button</a>
+    <a class="waves-effect waves-blue btn-large btn-sidemenu">Button</a>
+    <a class="waves-effect waves-blue btn-large btn-sidemenu">Button</a>
+    <a class="waves-effect waves-blue btn-large btn-sidemenu">Button</a>
   </md-sidenav>
     <div class="example-sidenav-content"
       (swipeleft)="sidenav.close()"  (swiperight)="sidenav.open()">
-
+      Here will be some info
     </div>
 </md-sidenav-container>
