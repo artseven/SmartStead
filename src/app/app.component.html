@@ -21,4 +21,12 @@
 </md-toolbar>
 <!-- <app-side-menu></app-side-menu> -->
 <!-- <app-ac></app-ac> -->
+<div class="thing-to-move"
+ (panstart)="onPanStart($event)"
+ (panmove)="onPan($event)"> Move Me! </div>
+
+ <div [style.marginLeft.px]="x" [style.marginTop.px]="y" ...>
+  <div>Move Me!</div>
+  <div>({{x}}, {{y}})</div>
+</div>
 <app-tabs></app-tabs>

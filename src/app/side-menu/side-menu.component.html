@@ -8,5 +8,7 @@
       Open sidenav
     </button>
   </div>
-
 </md-sidenav-container>
+<div class="thing-to-move"
+ (panstart)="onPanStart($event)"
+ (panmove)="onPan($event)"> Move Me! </div>

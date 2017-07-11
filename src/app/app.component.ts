@@ -7,11 +7,23 @@ import { Http } from '@angular/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  x: number = 0;
+y: number = 0;
+startX: number = 0;
+startY: number = 0;
 
-  myData: Array<any>;
+onPanStart(event: any): void {
+  event.preventDefault();
+  this.startX = this.x;
+  this.startY = this.y;
+}
 
-  constructor(private http:Http) {
-    this.http.get('https://jsonplaceholder.typicode.com/photos').map(response => response.json())
-    .subscribe(res => this.myData = res);
+onPan(event: any): void {
+  event.preventDefault();
+  this.x = this.startX + event.deltaX;
+  this.y = this.startY + event.deltaY;
+}
+  constructor() {
+
   }
 }

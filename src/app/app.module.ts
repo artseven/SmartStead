@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 import 'rxjs/Rx';
 import 'hammerjs';
 
+
 // Material design modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {

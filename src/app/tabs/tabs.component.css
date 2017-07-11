@@ -7,10 +7,10 @@ md-tab-group {
 }
 
 .md-tab-label {
-  flex-basis: 0;
-  flex-grow: 1;
 
 }
 
-.mat-tab-labels {
+.mat-tab-label {
+  color: green;
+
 }
