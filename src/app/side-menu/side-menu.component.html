@@ -1,9 +1,11 @@
 <!-- <md-sidenav-container class="example-container" flex md-scroll-y (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)"> -->
-<md-sidenav-container class="example-container" flex md-scroll-y (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)">
-
+<md-sidenav-container class="example-container"
+  flex md-scroll-y (swipeleft)="swipe(idx, $event.type)"
+  (swiperight)="swipe(idx, $event.type)">
   <md-sidenav mode="side" #sidenav class="example-sidenav">
     My Menu
   </md-sidenav>
-  <div class="example-sidenav-content" (swipeleft)="sidenav.toggle()"  (swiperight)="sidenav.toggle()">
+  <div class="example-sidenav-content"
+    (swipeleft)="sidenav.close()"  (swiperight)="sidenav.open()">
   </div>
 </md-sidenav-container>

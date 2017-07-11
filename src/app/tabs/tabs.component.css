@@ -12,5 +12,9 @@ md-tab-group {
 
 .mat-tab-label {
   color: green;
+}
 
+.main-tab-menu {
+  text-align: center;
+  padding: 5%;
 }
