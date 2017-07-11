@@ -14,7 +14,8 @@ import {
   MdIconModule,
   MdCheckboxModule,
   MdTabsModule,
-  MdTabHeaderPosition } from '@angular/material';
+  MdTabHeaderPosition,
+} from '@angular/material';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { CameraComponent } from './camera/camera.component';
 import { ACComponent } from './ac/ac.component';
