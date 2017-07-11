@@ -7,7 +7,7 @@ import { HttpModule } from '@angular/http';
 
 import 'rxjs/Rx';
 import 'hammerjs';
-
+import 'materialize-css';
 
 // Material design modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
