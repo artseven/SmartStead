@@ -11,15 +11,21 @@
   padding: 5px;
   justify-content: center;
 }
+@media only screen and (max-width: 420px) {
+  .sidenav {
+    width: 60px;
+    opacity: 0.6;
+  }
 
-.sidenav {
-  width: 120px;
-  opacity: 0.6;
+  .hidden-on-mobile {
+    display: none;
+  }
 }
 
-.btn-sidemenu {
-  background-color: #00abff;
-  width: 120px;
-  opacity: 0.6;
 
+@media only screen (min-width: 421px) and (max-width: 1080px) {
+  .sidenav {
+    width: 200px;
+    opacity: 0.6;
+  }
 }
