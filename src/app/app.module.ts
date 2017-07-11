@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
 import 'rxjs/Rx';
-import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -21,7 +21,9 @@ import { CameraComponent } from './camera/camera.component';
 import { ACComponent } from './ac/ac.component';
 import { LightsComponent } from './lights/lights.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { SessionService} from './session.service'
 
+import { AppComponent } from './app.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,7 @@ import { TabsComponent } from './tabs/tabs.component';
     MdTabsModule
 
   ],
-  providers: [],
+  providers: [SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
