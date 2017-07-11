@@ -6,7 +6,14 @@ import 'rxjs/Rx';
 import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
+import {
+  MdButtonModule,
+  MdCardModule,
+  MdMenuModule,
+  MdToolbarModule,
+  MdIconModule,
+  MdCheckboxModule,
+  MdTabsModule } from '@angular/material';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { CameraComponent } from './camera/camera.component';
 import { ACComponent } from './ac/ac.component';
@@ -31,7 +38,10 @@ import { TabsComponent } from './tabs/tabs.component';
     MdCardModule,
     MdMenuModule,
     MdToolbarModule,
-    MdIconModule
+    MdIconModule,
+    MdCheckboxModule,
+    MdTabsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
