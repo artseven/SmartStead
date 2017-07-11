@@ -1,5 +1,16 @@
 md-tab-group {
-  position: fixed;
   bottom: 0px;
-  widht: 100%;
+  width: 100%;
+  position: fixed;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+.md-tab-label {
+  flex-basis: 0;
+  flex-grow: 1;
+
+}
+
+.mat-tab-labels {
 }
