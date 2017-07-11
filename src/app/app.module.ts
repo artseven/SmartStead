@@ -13,7 +13,8 @@ import {
   MdToolbarModule,
   MdIconModule,
   MdCheckboxModule,
-  MdTabsModule } from '@angular/material';
+  MdTabsModule,
+  MdTabHeaderPosition } from '@angular/material';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { CameraComponent } from './camera/camera.component';
 import { ACComponent } from './ac/ac.component';
