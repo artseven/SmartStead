@@ -1,10 +1,13 @@
+// Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule} from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import 'rxjs/Rx';
 
+// Material design modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MdButtonModule,
@@ -16,14 +19,21 @@ import {
   MdTabsModule,
   MdTabHeaderPosition,
 } from '@angular/material';
+// Components
+import { AppComponent } from './app.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { CameraComponent } from './camera/camera.component';
 import { ACComponent } from './ac/ac.component';
 import { LightsComponent } from './lights/lights.component';
 import { TabsComponent } from './tabs/tabs.component';
+
+// Services
 import { SessionService} from './session.service'
 
-import { AppComponent } from './app.component';
+
+// routes
+import { AppRoutingModule } from './app-routing/app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +47,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    // Material design
     BrowserAnimationsModule,
     MdButtonModule,
     MdCardModule,
@@ -44,7 +55,8 @@ import { AppComponent } from './app.component';
     MdToolbarModule,
     MdIconModule,
     MdCheckboxModule,
-    MdTabsModule
+    MdTabsModule,
+    AppRoutingModule
 
   ],
   providers: [SessionService],
