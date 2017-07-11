@@ -2,11 +2,10 @@
   flex md-scroll-y (swipeleft)="swipe(idx, $event.type)"
   (swiperight)="swipe(idx, $event.type)">
   <md-sidenav mode="over" #sidenav class="sidenav">
-    <a class="waves-effect waves-teal btn-flat">Button</a>
-    <a class="waves-effect waves-light btn-small"><i class="material-icons left">cloud</i>button</a>
-    <a class="waves-effect waves-light btn-small"><i class="material-icons right">cloud</i>button</a>
+    <a class="waves-effect waves-blue btn-flat">Button</a>
   </md-sidenav>
     <div class="example-sidenav-content"
       (swipeleft)="sidenav.close()"  (swiperight)="sidenav.open()">
+
     </div>
 </md-sidenav-container>

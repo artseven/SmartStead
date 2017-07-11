@@ -7,11 +7,12 @@ import { HttpModule } from '@angular/http';
 
 import 'rxjs/Rx';
 import 'hammerjs';
-import 'materialize-css';
 
 // Material design modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { MaterializeModule } from 'angular2/materialize';
 import {
+  MaterialModule,
   MdButtonModule,
   MdCardModule,
   MdMenuModule,
@@ -51,6 +52,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     FormsModule,
     HttpModule,
     // Material design
+    MaterialModule,
     BrowserAnimationsModule,
     MdButtonModule,
     MdCardModule,
@@ -61,7 +63,6 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     MdTabsModule,
     MdSidenavModule,
     AppRoutingModule
-
   ],
   providers: [SessionService],
   bootstrap: [AppComponent]
