@@ -9,6 +9,7 @@ import { LightsComponent } from '../lights/lights.component';
 import { TabsComponent } from '../tabs/tabs.component';
 import { AppComponent } from '../app.component';
 
+// Routing table
 const routes: Routes = [
   {
     path: '',
@@ -16,17 +17,17 @@ const routes: Routes = [
   },
 
   {
-    path: '/camera',
+    path: 'camera',
     component: CameraComponent
   },
 
   {
-    path: '/ac',
+    path: 'ac',
     component: ACComponent
   },
 
   {
-    path:'/lights',
+    path:'lights',
     component: LightsComponent
   },
 

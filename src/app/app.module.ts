@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import 'rxjs/Rx';
+import 'hammerjs';
 
 // Material design modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +19,7 @@ import {
   MdCheckboxModule,
   MdTabsModule,
   MdTabHeaderPosition,
+  MdSidenavModule
 } from '@angular/material';
 // Components
 import { AppComponent } from './app.component';
@@ -56,6 +58,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     MdIconModule,
     MdCheckboxModule,
     MdTabsModule,
+    MdSidenavModule,
     AppRoutingModule
 
   ],
