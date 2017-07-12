@@ -32,8 +32,8 @@ import { LightsComponent } from './lights/lights.component';
 import { TabsComponent } from './tabs/tabs.component';
 
 // Services
-import { SessionService} from './session.service'
-
+import { SessionService} from './session.service';
+import { AuthService} from './auth/auth.service';
 
 // routes
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -64,7 +64,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     MdSidenavModule,
     AppRoutingModule
   ],
-  providers: [SessionService],
+  providers: [SessionService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
