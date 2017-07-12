@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import { Http } from '@angular/http';
 export class AppComponent {
 
 
-  constructor() {
-
+  constructor(public auth: AuthService) {
+     auth.handleAuthentication();
   }
+
 }
