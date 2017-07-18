@@ -1,0 +1,9 @@
+#up-button {
+  position: relative;
+  bottom: 35px;
+}
+
+#down-button {
+  position: relative;
+  right: 0px;
+}
