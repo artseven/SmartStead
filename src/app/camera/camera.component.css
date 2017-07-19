@@ -1,6 +1,7 @@
 #up-button {
   position: relative;
   bottom: 35px;
+  margin-top: 15px;
 }
 
 #down-button {
