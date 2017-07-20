@@ -39,6 +39,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     TabsComponent,
     HomePageComponent,
     LogInComponent,
-    SignUpComponent
+    SignUpComponent,
+    HeaderComponent
   ],
   imports: [
     // Angular main modules
