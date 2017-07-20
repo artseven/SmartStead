@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import { AuthService } from './auth/auth.service';
+import { Router } from '@angular/router';
+
+import { SessionService } from './session.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,10 +11,40 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  isLoggedIn: boolean = false;
 
+  constructor(
+    private sessionThang: SessionService,
+    private routerThang: Router
+  ) { }
 
-  constructor(public auth: AuthService) {
-     auth.handleAuthentication();
+  ngOnInit() {
+      this.sessionThang.loggedIn$.subscribe((userFromApi) => {
+          this.isLoggedIn = true;
+      });
+
+      this.sessionThang.checkLogin()
+        // if logged in, redirect to /lists
+        .then((userInfo) => {
+            this.routerThang.navigate(['/lists']);
+            this.isLoggedIn = true;
+        })
+        // else redirect to /
+        .catch((err) => {
+            this.routerThang.navigate(['/']);
+        });
   }
 
+  logMeOut() {
+      this.sessionThang.logout()
+        .then(() => {
+            this.routerThang.navigate(['/']);
+            this.isLoggedIn = false;
+        })
+        .catch(() => {});
+  }
+
+  handleLogin(userFromApi) {
+      this.isLoggedIn = true;
+  }
 }

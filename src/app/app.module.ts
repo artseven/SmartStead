@@ -48,6 +48,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     TabsComponent
   ],
   imports: [
+    // Angular main modules
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -62,6 +63,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     MdCheckboxModule,
     MdTabsModule,
     MdSidenavModule,
+    // Routing
     AppRoutingModule
   ],
   providers: [SessionService, AuthService],

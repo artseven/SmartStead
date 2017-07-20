@@ -1,42 +1,71 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+import { Http } from '@angular/http';
+import { Subject } from 'rxjs/Subject';
+import 'rxjs/add/operator/toPromise';
 
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class SessionService {
+  baseUrl: string = environment.apiUrl;
 
-  BASE_URL: string = 'http://localhost:3000';
+  private loggedInSource = new Subject<any>();
 
-  constructor(private http: Http) { }
+  loggedIn$ = this.loggedInSource.asObservable();
+  // app component will subscribe to "loggedIn$"
 
-  handleError(e) {
-    return Observable.throw(e.json().message);
+  constructor(
+    private myHttpThang: Http
+  ) { }
+
+  loggedIn (userInfo) {
+      this.loggedInSource.next(userInfo);
   }
 
-  signup(user) {
-    return this.http.post(`${this.BASE_URL}/signup`, user)
-      .map(res => res.json())
-      .catch(this.handleError);
+  checkLogin() {
+      return this.myHttpThang
+        .get(
+          this.baseUrl + '/api/checklogin',
+          { withCredentials: true }
+        )
+        .toPromise()
+        .then(res => res.json());
   }
 
-  login(user) {
-    return this.http.post(`${this.BASE_URL}/login`, user)
-      .map(res => res.json())
-      .catch(this.handleError);
+  login(email, password) {
+      return this.myHttpThang
+        .post(
+          this.baseUrl + '/api/login',
+          {
+            loginEmail: email,
+            loginPassword: password
+          },
+          { withCredentials: true }
+        )
+        .toPromise()
+        .then(res => res.json());
+  }
+
+  signup(userInfo) {
+      return this.myHttpThang
+        .post(
+          this.baseUrl + '/api/signup',
+          userInfo,
+          { withCredentials: true }
+        )
+        .toPromise()
+        .then(res => res.json());
   }
 
   logout() {
-    return this.http.post(`${this.BASE_URL}/logout`, {})
-      .map(res => res.json())
-      .catch(this.handleError);
+      return this.myHttpThang
+        .post(
+          this.baseUrl + '/api/logout',
+          {},
+          { withCredentials: true }
+        )
+        .toPromise()
+        .then(res => res.json());
   }
 
-  isLoggedIn() {
-    return this.http.get(`${this.BASE_URL}/loggedin`)
-      .map(res => res.json())
-      .catch(this.handleError);
-  }
 }
