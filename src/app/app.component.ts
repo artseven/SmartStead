@@ -24,9 +24,9 @@ export class AppComponent {
       });
 
       this.sessionThang.checkLogin()
-        // if logged in, redirect to /lists
+        // if logged in, redirect to /home
         .then((userInfo) => {
-            this.routerThang.navigate(['/lists']);
+            this.routerThang.navigate(['/home']);
             this.isLoggedIn = true;
         })
         // else redirect to /
