@@ -10,7 +10,6 @@ import 'hammerjs';
 
 // Material design modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { MaterializeModule } from 'angular2/materialize';
 import {
   MaterialModule,
   MdButtonModule,
@@ -37,6 +36,9 @@ import { AuthService} from './auth/auth.service';
 
 // routes
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { HomePageComponent } from './home-page/home-page.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,10 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     CameraComponent,
     ACComponent,
     LightsComponent,
-    TabsComponent
+    TabsComponent,
+    HomePageComponent,
+    LogInComponent,
+    SignUpComponent
   ],
   imports: [
     // Angular main modules
