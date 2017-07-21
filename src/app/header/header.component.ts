@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../session.service';
+import { Router } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private sessionThang: SessionService,
+    private routerThang: Router,
+  ) { }
 
   ngOnInit() {
   }
+
+  btnClick= function () {
+        this.router.navigate(['/login']);
+};
+
 
 }

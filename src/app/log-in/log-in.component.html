@@ -3,19 +3,8 @@
 <p class="error" *ngIf="errorMessage">
   {{ errorMessage }}
 </p>
-<form #UserLogin="ngForm" (ngSubmit)="submitLogin()">
-<md-input-container>
-    <input mdInput [(ngModel)]="formEmail" name="email" placeholder="E-mail" class="form-control"  type="text" required>
-</md-input-container>
 
-<md-input-container>
-    <input mdInput [(ngModel)]="formPassword" name="password" class="form-control" placeholder="Password" type="password" required>
-</md-input-container>
-
-<button md-button class="submit-btn">Login!</button>
-</form>
-
-<!-- <form (ngSubmit)="submitLogin()">
+<form (ngSubmit)="submitLogin()">
   <md-input-container>
     <input mdInput  type="email" placeholder="E-MAIL"
         [(ngModel)]="formEmail" name="formEmail">
@@ -25,7 +14,7 @@
         [(ngModel)]="formPassword" name="formPassword">
   </md-input-container>
   <button md-raised-button>Log In</button>
-</form> -->
+</form>
 
 
 <!-- <form (ngSubmit)="submitLogin()">
@@ -39,5 +28,5 @@
       [(ngModel)]="formPassword" name="formPassword">
   <br>
 
-  <button> Log In </button>
+  <button md-raised-button> Log In </button>
 </form> -->

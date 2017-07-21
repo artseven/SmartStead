@@ -13,11 +13,11 @@ import { HomePageComponent } from '../home-page/home-page.component'
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent
+    component: HomePageComponent
   },
   {
     path: 'home',
-    component: HomePageComponent
+    component: AppComponent
   },
   {
     path: 'camera',

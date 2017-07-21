@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl } from '@angular/forms';
-
+// import { FormControl } from '@angular/forms';
 import { SessionService } from '../session.service';
 
 @Component({
@@ -26,7 +25,7 @@ export class LogInComponent implements OnInit {
   submitLogin() {
       this.sessionThang.login(this.formEmail, this.formPassword)
         .then((userFromApi) => {
-            this.routerThang.navigate(['/']);
+            this.routerThang.navigate(['/login']);
             this.sessionThang.loggedIn(userFromApi);
         })
         .catch((errResponse) => {

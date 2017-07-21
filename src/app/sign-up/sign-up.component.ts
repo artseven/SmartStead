@@ -24,7 +24,7 @@ export class SignUpComponent implements OnInit {
   submitSignup() {
       this.sessionThang.signup(this.newUser)
         .then((userFromApi) => {
-            this.routerThang.navigate(['/lists']);
+            this.routerThang.navigate(['/']);
             this.sessionThang.loggedIn(userFromApi);
         })
         .catch((errResponse) => {
