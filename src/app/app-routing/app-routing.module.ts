@@ -8,31 +8,37 @@ import { ACComponent } from '../ac/ac.component';
 import { LightsComponent } from '../lights/lights.component';
 import { TabsComponent } from '../tabs/tabs.component';
 import { AppComponent } from '../app.component';
-import { HomePageComponent } from '../home-page/home-page.component'
+import { HomePageComponent } from '../home-page/home-page.component';
+import { AuthPageComponent } from '../auth-page/auth-page.component';
+
 // Routing table
 const routes: Routes = [
   {
     path: '',
-    component: HomePageComponent
-  },
-  {
-    path: 'home',
     component: AppComponent
   },
   {
-    path: 'camera',
-    component: CameraComponent
+    path: 'home',
+    component: HomePageComponent
   },
-
   {
-    path: 'ac',
-    component: ACComponent
-  },
-
-  {
-    path:'lights',
-    component: LightsComponent
-  },
+    path: 'login',
+    component: AuthPageComponent
+  }
+  // {
+  //   path: 'camera',
+  //   component: CameraComponent
+  // },
+  //
+  // {
+  //   path: 'ac',
+  //   component: ACComponent
+  // },
+  //
+  // {
+  //   path:'lights',
+  //   component: LightsComponent
+  // },
 
 ];
 

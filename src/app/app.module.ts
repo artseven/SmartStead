@@ -41,6 +41,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { HeaderComponent } from './header/header.component';
+import { AuthPageComponent } from './auth-page/auth-page.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { HeaderComponent } from './header/header.component';
     HomePageComponent,
     LogInComponent,
     SignUpComponent,
-    HeaderComponent
+    HeaderComponent,
+    AuthPageComponent
   ],
   imports: [
     // Angular main modules
