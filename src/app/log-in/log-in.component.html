@@ -1,7 +1,4 @@
-
-
-
-
+<p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
 <form (ngSubmit)="submitLogin()">
   <label for="email-input"> Email </label>
   <input mdInput id="email-input" type="email" placeholder="blah@example.com"
@@ -13,9 +10,9 @@
       [(ngModel)]="formPassword" name="formPassword">
   <br>
 
-  <button md-raised-button> Log In </button>
+  <button md-primary > Log In </button>
 </form>
-
+<!--
 
 <md-card>
  <h3> Log In </h3>
@@ -37,4 +34,4 @@
    <br>
    <button md-raised-button>Log In</button>
  </form>
-</md-card>
+</md-card> -->
