@@ -1,20 +1,23 @@
-<h3> Log In </h3>
+<md-card>
+  <h3> Log In </h3>
 
-<p class="error" *ngIf="errorMessage">
-  {{ errorMessage }}
-</p>
+  <p class="error" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </p>
 
-<form (ngSubmit)="submitLogin()" >
-  <md-input-container>
-    <input mdInput  type="email" placeholder="E-MAIL"
-        [(ngModel)]="formEmail" name="formEmail">
-  </md-input-container>
-  <md-input-container>
-    <input mdInput type="password" placeholder="PASSWORD"
-        [(ngModel)]="formPassword" name="formPassword">
-  </md-input-container>
-  <button md-raised-button>Log In</button>
-</form>
+  <form (ngSubmit)="submitLogin()" >
+    <md-input-container>
+      <input mdInput  type="email" placeholder="E-MAIL"
+          [(ngModel)]="formEmail" name="formEmail">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput type="password" placeholder="PASSWORD"
+          [(ngModel)]="formPassword" name="formPassword">
+    </md-input-container>
+    <button md-raised-button>Log In</button>
+  </form>
+</md-card>
+
 
 
 <!-- <form (ngSubmit)="submitLogin()">

@@ -1,2 +1,22 @@
-<p>SmartStead</p>
+<md-toolbar background-color="#282828">
+  <span>SmartStead</span>
+  <!-- <span class="spacer"></span> -->
+  <button md-button class="main-menu-icon" [mdMenuTriggerFor]='appMenu'>
+    <md-icon>menu</md-icon>
+  </button>
+  <md-menu #appMenu="mdMenu">
+    <button  md-menu-item (click)="btnClick()">
+      <md-icon>fingerprint</md-icon>
+      <span>Log In</span>
+    </button>
+    <button md-menu-item>
+      <md-icon>settings</md-icon>
+      <span>Settings</span>
+    </button>
+    <button md-menu-item>
+      <md-icon style="color:red">close</md-icon>
+      <span style="color:red">Log Out</span>
+    </button>
+  </md-menu>
+</md-toolbar>
 <router-outlet></router-outlet>

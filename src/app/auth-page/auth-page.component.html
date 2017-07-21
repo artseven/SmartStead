@@ -1,3 +1,18 @@
-
-<button><a href="#" (click)="onSelect('recipe')">Recipes</a></button>
-<button><a href="#" (click)="onSelect('shopping-list')">Shopping List</a></button>
+<md-tab-group md-stretch-tabs>
+  <md-tab>
+    <ng-template md-tab-label>
+      <span>Log In</span>
+    </ng-template>
+    <div class="main-tab-menu">
+      <app-log-in></app-log-in>
+    </div>
+  </md-tab>
+  <md-tab>
+    <ng-template md-tab-label>
+      <span>Sign Up</span>
+    </ng-template>
+    <div class="main-tab-menu">
+      <app-sign-up></app-sign-up>
+    </div>
+  </md-tab>
+</md-tab-group>
