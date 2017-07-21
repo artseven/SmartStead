@@ -1,26 +1,8 @@
-<md-card>
-  <h3> Log In </h3>
-
-  <p class="error" *ngIf="errorMessage">
-    {{ errorMessage }}
-  </p>
-
-  <form (ngSubmit)="submitLogin()" >
-    <md-input-container>
-      <input mdInput  type="email" placeholder="E-MAIL"
-          [(ngModel)]="formEmail" name="formEmail">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput type="password" placeholder="PASSWORD"
-          [(ngModel)]="formPassword" name="formPassword">
-    </md-input-container>
-    <button md-raised-button>Log In</button>
-  </form>
-</md-card>
 
 
 
-<!-- <form (ngSubmit)="submitLogin()">
+
+<form (ngSubmit)="submitLogin()">
   <label for="email-input"> Email </label>
   <input mdInput id="email-input" type="email" placeholder="blah@example.com"
       [(ngModel)]="formEmail" name="formEmail">
@@ -32,4 +14,27 @@
   <br>
 
   <button md-raised-button> Log In </button>
-</form> -->
+</form>
+
+
+<md-card>
+ <h3> Log In </h3>
+
+ <p class="error" *ngIf="errorMessage">
+   {{ errorMessage }}
+ </p>
+
+<form (ngSubmit)="submitLogin()" >
+   <md-input-container>
+     <input mdInput  type="email" placeholder="E-MAIL"
+         [(ngModel)]="formEmail" name="formEmail">
+   </md-input-container>
+   <br>
+   <md-input-container>
+     <input mdInput type="password" placeholder="PASSWORD"
+         [(ngModel)]="formPassword" name="formPassword">
+   </md-input-container>
+   <br>
+   <button md-raised-button>Log In</button>
+ </form>
+</md-card>
