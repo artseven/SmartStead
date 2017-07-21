@@ -4,15 +4,10 @@
   {{ errorMessage }}
 </p>
 
-<md-input-container (ngSubmit)="submitLogin()">
-  <input mdInput placeholder="E-mail"
-  [(ngModel)]="formEmail" name="formEmail" >
-</md-input-container>
-
 
 <form (ngSubmit)="submitLogin()">
   <md-input-container class="example-full-width">
-    <input mdInput placeholder="Email" [formControl]="emailFormControl">
+    <input mdInput placeholder="Email" [(ngModel)]="formEmail" [formControl]="emailFormControl">
     <md-error *ngIf="emailFormControl.hasError('pattern')">
       Please enter a valid email address
     </md-error>
