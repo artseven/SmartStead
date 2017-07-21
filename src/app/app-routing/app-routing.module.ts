@@ -14,8 +14,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'HomePageComponent',
-
+    redirectTo: 'HomePageComponent'
   },
   {
     path: 'home',

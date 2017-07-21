@@ -4,7 +4,26 @@
   {{ errorMessage }}
 </p>
 
+<md-input-container (ngSubmit)="submitLogin()">
+  <input mdInput placeholder="E-mail"
+  [(ngModel)]="formEmail" name="formEmail" >
+</md-input-container>
+
+
 <form (ngSubmit)="submitLogin()">
+  <md-input-container class="example-full-width">
+    <input mdInput placeholder="Email" [formControl]="emailFormControl">
+    <md-error *ngIf="emailFormControl.hasError('pattern')">
+      Please enter a valid email address
+    </md-error>
+    <md-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </md-error>
+  </md-input-container>
+</form>
+
+
+<!-- <form (ngSubmit)="submitLogin()">
   <label for="email-input"> Email </label>
   <input  id="email-input" type="email" placeholder="blah@example.com"
       [(ngModel)]="formEmail" name="formEmail">
@@ -16,4 +35,4 @@
   <br>
 
   <button> Log In </button>
-</form>
+</form> -->

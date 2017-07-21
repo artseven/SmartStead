@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { SessionService } from '../session.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -6,10 +9,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
+  newUser: any = {};
 
-  constructor() { }
+  errorMessage: string;
+
+  constructor(
+    private sessionThang: SessionService,
+    private routerThang: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  submitSignup() {
+      this.sessionThang.signup(this.newUser)
+        .then((userFromApi) => {
+            this.routerThang.navigate(['/lists']);
+            this.sessionThang.loggedIn(userFromApi);
+        })
+        .catch((errResponse) => {
+            const apiInfo = errResponse.json();
+            this.errorMessage = apiInfo.message;
+        })
   }
 
 }
