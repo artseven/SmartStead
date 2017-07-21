@@ -1,6 +1,6 @@
 <md-sidenav-container class="example-container"
-  flex md-scroll-y (swipeleft)="swipe(idx, $event.type)"
-  (swiperight)="swipe(idx, $event.type)">
+  flex md-scroll-y (swipeleft)="swipe($event.type)"
+  (swiperight)="swipe($event.type)">
   <md-sidenav mode="side" #sidenav class="sidenav">
     <button md-menu-item >
       <svg style="width:24px;height:24px" viewBox="0 0 24 24">
