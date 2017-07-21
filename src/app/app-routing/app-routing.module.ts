@@ -8,17 +8,16 @@ import { ACComponent } from '../ac/ac.component';
 import { LightsComponent } from '../lights/lights.component';
 import { TabsComponent } from '../tabs/tabs.component';
 import { AppComponent } from '../app.component';
-
+import { HomePageComponent } from '../home-page/home-page.component'
 // Routing table
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'HomePageComponent'
+    component: AppComponent
   },
   {
     path: 'home',
-    component: AppComponent
+    component: HomePageComponent
   },
   {
     path: 'camera',
