@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { MdInputModule } from '@angular/material';
 import { FormControl } from '@angular/forms';
 
-
 import { SessionService } from '../session.service';
 
 @Component({
