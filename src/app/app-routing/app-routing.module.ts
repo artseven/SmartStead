@@ -15,7 +15,8 @@ import { AuthPageComponent } from '../auth-page/auth-page.component';
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent
+    pathMatch: 'full',
+    redirectTo: 'login'
   },
   {
     path: 'home',

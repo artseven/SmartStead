@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
 
   btnClick= function () {
         this.router.navigate(['/login']);
-};
+  };
 
 
 }
