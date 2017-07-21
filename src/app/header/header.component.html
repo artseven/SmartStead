@@ -5,15 +5,19 @@
     <md-icon>menu</md-icon>
   </button>
   <md-menu #appMenu="mdMenu">
-    <button  md-menu-item (click)="btnClick()">
+    <button md-menu-item *ngIf="isLoggedIn"  (click)="btnClick()">
       <md-icon>fingerprint</md-icon>
       <span>Log In</span>
+    </button>
+    <button  md-menu-item (click)="homeClicked()">
+      <md-icon>home</md-icon>
+      <span>Home</span>
     </button>
     <button md-menu-item>
       <md-icon>settings</md-icon>
       <span>Settings</span>
     </button>
-    <button md-menu-item>
+    <button md-menu-item *ngIf="!isLoggedIn" (click)="logMeOut()" >
       <md-icon style="color:red">close</md-icon>
       <span style="color:red">Log Out</span>
     </button>

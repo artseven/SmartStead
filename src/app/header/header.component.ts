@@ -9,19 +9,52 @@ import { Subject } from 'rxjs/Subject';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isLoggedIn: boolean = false;
+
+  btnClick= function () {
+        this.routerThang.navigate(['/login']);
+  };
+
+  homeClicked = function () {
+        this.routerThang.navigate(['/home']);
+  };
+
 
   constructor(
-    private router: Router,
     private sessionThang: SessionService,
     private routerThang: Router,
   ) { }
 
+
   ngOnInit() {
+      this.sessionThang.loggedIn$.subscribe((userFromApi) => {
+          this.isLoggedIn = true;
+      });
+
+      this.sessionThang.checkLogin()
+        // if logged in, redirect to /home
+        .then((userInfo) => {
+            this.routerThang.navigate(['/home']);
+            this.isLoggedIn = true;
+        })
+        // else redirect to /
+        .catch((err) => {
+            this.routerThang.navigate(['/']);
+        });
   }
 
-  btnClick= function () {
-        this.router.navigate(['/login']);
-  };
+  logMeOut() {
+      this.sessionThang.logout()
+        .then(() => {
+            this.routerThang.navigate(['/login']);
+            this.isLoggedIn = false;
+        })
+        .catch(() => {});
+  }
+
+  handleLogin(userFromApi) {
+      this.isLoggedIn = true;
+  }
 
 
 }
