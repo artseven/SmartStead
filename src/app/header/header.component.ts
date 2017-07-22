@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
         })
         // else redirect to /
         .catch((err) => {
-            this.routerThang.navigate(['/']);
+            this.routerThang.navigate(['/login']);
         });
   }
 

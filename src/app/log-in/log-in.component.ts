@@ -25,7 +25,7 @@ export class LogInComponent implements OnInit {
   submitLogin() {
       this.sessionThang.login(this.formEmail, this.formPassword)
         .then((userFromApi) => {
-            this.routerThang.navigate(['/']);
+            this.routerThang.navigate(['/home']);
             this.sessionThang.loggedIn(userFromApi);
         })
         .catch((errResponse) => {
