@@ -49,7 +49,11 @@ export class HeaderComponent implements OnInit {
             this.routerThang.navigate(['/login']);
             this.isLoggedIn = false;
         })
-        .catch(() => {});
+        .catch((err) => {
+            this.isLoggedIn = true;
+            console.log('Something is wrong with log out');
+            console.log(err);
+        });
   }
 
   handleLogin(userFromApi) {
