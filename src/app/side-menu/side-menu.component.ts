@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-menu',
@@ -33,6 +34,10 @@ export class SideMenuComponent implements OnInit {
       console.log("SWIPED RIGHT!")
 
     }
+  }
+
+  onCalendarClicked(){
+    this.router.navigate('/calendar');
   }
 
   constructor() { }
