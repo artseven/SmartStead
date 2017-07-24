@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class SideMenuComponent implements OnInit {
   selectedIndex: number = 1;
-  selectChange(): void{
-    console.log("Selected INDEX: " + this.selectedIndex);
+  selectChange(): void {
+    console.log('Selected INDEX: ' + this.selectedIndex);
   }
 
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
@@ -25,7 +25,7 @@ export class SideMenuComponent implements OnInit {
       // const isLast = this.selectedIndex === 1;
       // this.selectedIndex = isLast ? 0 : this.selectedIndex + 1;
       // console.log("Swipe right - INDEX: " + this.selectedIndex);
-      console.log("SWIPED LEFT!")
+      console.log('SWIPED LEFT!')
     }
 
     // Swipe right, previous tab
@@ -34,11 +34,6 @@ export class SideMenuComponent implements OnInit {
       console.log("SWIPED RIGHT!")
 
     }
-  }
-
-  onCalendarClicked(){
-     private sessionThang: SessionService,
-    private routerThang: Router
   }
 
   constructor() { }
