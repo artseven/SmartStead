@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
+
+import { SessionService } from '../session.service';
+
 @Component({
   selector: 'app-side-menu',
   templateUrl: './side-menu.component.html',
@@ -35,8 +38,13 @@ export class SideMenuComponent implements OnInit {
 
     }
   }
-
-  constructor() { }
+      onShoppingClicked() {
+    this.routerThang.navigate(['/cart'])
+  }
+  constructor(
+    private sessionThang: SessionService,
+    private routerThang: Router
+  ) { }
 
   ngOnInit() {
   }

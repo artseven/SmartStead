@@ -10,6 +10,7 @@ import { TabsComponent } from '../tabs/tabs.component';
 import { AppComponent } from '../app.component';
 import { HomePageComponent } from '../home-page/home-page.component';
 import { AuthPageComponent } from '../auth-page/auth-page.component';
+import { ShoppingListComponent} from '../shopping-list/shopping-list.component';
 
 // Routing table
 const routes: Routes = [
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: AuthPageComponent
+  },
+  {
+    path: 'cart',
+    component: ShoppingListComponent
   }
   // {
   //   path: 'camera',
