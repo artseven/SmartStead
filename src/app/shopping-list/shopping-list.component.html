@@ -1,11 +1,11 @@
-<form class="item-add" (ngSubmit)="createNewItem()">
+<!-- <form class="item-add" (ngSubmit)="createNewItem()">
     <label for="name-input">Name</label>
     <input id="name-input" type="text" placeholder="vegetables" [(ngModel)]="formProductName" name="productName">
     <label for="quantity-input">Quantity</label>
     <input id="quantity-input" type="number" placeholder="0" [(ngModel)]="formProductQuantity" name="productQuantity">
 
     <button md-mini-fab> + </button>
-</form>
+</form> -->
 <md-card>
     <span>One more</span>
     <md-checkbox class="shopping-check" (click)="onShoppingChecked()"></md-checkbox>
@@ -14,3 +14,13 @@
     <span>dummy</span>
     <md-checkbox class="shopping-check"></md-checkbox>
 </md-card>
+
+<!-- <input #itemInput (keyup.enter)="addItem(itemInput.value); itemInput.value=''">
+
+<button (click)="addItem(itemInput.value); itemInput.value=''">
+  Add
+</button> -->
+
+<!-- <ul *ngIf="items">
+    <li *ngFor="let item of items" (click)="removeItem(item)" [@itemAnim]>{{ item }}</li>
+</ul> -->

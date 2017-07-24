@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule} from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormControl } from '@angular/forms'
 import { HttpModule } from '@angular/http';
 
@@ -65,6 +65,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     // Angular main modules
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     // Material design
     MaterialModule,

@@ -27,8 +27,10 @@ import { trigger, style, transition, animate, group } from '@angular/animations'
 
 export class ShoppingListComponent implements OnInit {
   shoppingItem;
+
   onShoppingChecked() {
     this.shoppingItem.delete();
   }
+
   ngOnInit() {}
 }
