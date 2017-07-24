@@ -37,7 +37,8 @@ export class SideMenuComponent implements OnInit {
   }
 
   onCalendarClicked(){
-    this.router.navigate('/calendar');
+     private sessionThang: SessionService,
+    private routerThang: Router
   }
 
   constructor() { }
