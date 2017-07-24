@@ -11,6 +11,7 @@ import 'hammerjs';
 
 // Material design modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { trigger, style, transition, animate, group } from '@angular/animations';
 import {
   MaterialModule,
   MdButtonModule,
