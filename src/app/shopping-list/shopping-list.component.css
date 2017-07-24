@@ -1,4 +1,20 @@
 .shopping-check {
     position: fixed;
-    right: 30px;
+    right: 40px;
+}
+
+#name-input {
+    max-width: 150px;
+}
+
+#quantity-input {
+    max-width: 20px;
+}
+
+.item-add {
+    width: 100%;
+}
+
+#md-mini-fab {
+    color: blue;
 }
