@@ -6,19 +6,24 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit {
-  @Output() okText;
-  @Output() cancelText;
-  @Output() valueEmitted;
+  @Input() value: string;
+  @Input() showPrompt: boolean;
+  @Input() placeholder: string;
+  @Input() title: string;
+  @Input() template: string;
+  @Input() okText: string;
+  @Input() cancelText: string;
+  @Output() valueEmitted = new EventEmitter<string>();
 
   constructor() {
-     this.okText = 'OK';
-     this.cancelText = 'Cancel';
-    }
-    emitValue(value) {
-     this.valueEmitted.emit(value);
+    this.okText = 'OK';
+    this.cancelText = 'Cancel';
   }
 
   ngOnInit() {
   }
 
+  emitValue(value) {
+    this.valueEmitted.emit(value);
+  }
 }
