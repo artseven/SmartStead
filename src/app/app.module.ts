@@ -42,6 +42,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthPageComponent } from './auth-page/auth-page.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { DialogComponent } from './dialog/dialog.component';
     SignUpComponent,
     HeaderComponent,
     AuthPageComponent,
-    DialogComponent
+    DialogComponent,
+    ShoppingListComponent
   ],
   imports: [
     // Angular main modules

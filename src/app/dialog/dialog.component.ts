@@ -6,9 +6,9 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit {
-  okText;
-  cancelText;
-  valueEmitted;
+  @Output() okText;
+  @Output() cancelText;
+  @Output() valueEmitted;
 
   constructor() {
      this.okText = 'OK';
