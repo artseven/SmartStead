@@ -36,7 +36,7 @@ import { TabsComponent } from './tabs/tabs.component';
 // Services
 import { SessionService} from './session.service';
 import { CartService } from './services/cart.service';
-
+import { CameraService } from './services/camera.service';
 // routes
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -84,8 +84,11 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     // Routing
     AppRoutingModule
   ],
-  providers: [SessionService,
-  CartService],
+  providers: [
+    SessionService,
+    CartService,
+    CameraService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

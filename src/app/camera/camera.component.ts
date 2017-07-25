@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MdButton } from '@angular/material';
 
+
+import { CameraService } from '../services/camera.service';
+
 @Component({
   selector: 'app-camera',
   templateUrl: './camera.component.html',
@@ -8,7 +11,9 @@ import { MdButton } from '@angular/material';
 })
 export class CameraComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private cameraService: CameraService
+  ) { }
 
   ngOnInit() {
   }

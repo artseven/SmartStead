@@ -30,11 +30,11 @@ const routes: Routes = [
   {
     path: 'cart',
     component: ShoppingListComponent
-  }
-  // {
-  //   path: 'camera',
-  //   component: CameraComponent
-  // },
+  },
+  {
+    path: 'camera',
+    component: CameraComponent
+  },
   //
   // {
   //   path: 'ac',
