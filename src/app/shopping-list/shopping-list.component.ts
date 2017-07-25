@@ -1,4 +1,9 @@
-import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Component,
+   OnInit,
+   Input,
+   EventEmitter,
+   ElementRef,
+   OnChanges } from '@angular/core';
 import { trigger, style, transition, animate, group } from '@angular/animations';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -26,10 +31,12 @@ import { CartService } from '../services/cart.service';
     ])
   ]),
 ]
+
 })
 
 export class ShoppingListComponent implements OnInit {
   oneItem: Object;
+  items;
   myItems;
   errorMessage;
   newItemName: string;
@@ -48,18 +55,25 @@ export class ShoppingListComponent implements OnInit {
       this.cartThang.shoppingItems()
         .then((itemsFromApi) => {
             this.myItems = itemsFromApi;
-            console.log('ID of the first element in array' + itemsFromApi[0]._id);
+            console.log('ID of the last element in array' + itemsFromApi[itemsFromApi.length]._id);
         })
         .catch((errResponse) => {
         });
   }
 
-  addItem() {
+    onFormSubmission(shoppingInput: HTMLInputElement, inputQuantity: HTMLInputElement) {
+      this.myItems.push({
+        name: shoppingInput,
+        quantity: inputQuantity
+        })
+    }
+
+    addItem() {
       this.cartThang.createItem(this.formProductName, this.formProductQuantity)
         .then((newCartFromApi) => {
             this.myItems.push(newCartFromApi);
             this.newItemName = this.formProductName;
-            this.newItemQuantity = this.newItemQuantity ;
+            this.newItemQuantity = this.formProductQuantity ;
         })
         .catch((errResponse) => {
             alert('Item create error 🐋');
@@ -67,7 +81,7 @@ export class ShoppingListComponent implements OnInit {
   }
 
     deleteItem(itemId) {
-      
+
     this.cartThang.remove(itemId)
       .then(() => {
         this.routerThang.navigate(['/cart']);
