@@ -11,11 +11,12 @@
         <span class="input-field">
             <label for="name-input">Name </label>
             <input id="name-input" type="text" class="validate" required="true"
-            [(ngModel)]="formProductName" name="productName">
+            [(ngModel)]="formProductName" name="productName" #shoppingInput>
         </span>
         <span class="input-field">
             <label for="quantity">Quantity </label>
-            <input id="quantity" type="number" class="validate" [(ngModel)]="formProductQuantity" name="productQuantity">
+            <input id="quantity" type="number" class="validate"
+             [(ngModel)]="formProductQuantity" name="productQuantity" #quantityInput>
         </span>
         <button class="my-add-button" md-mini-fab type="submit"> + </button>
     </form>
@@ -23,5 +24,7 @@
 
 <md-card class="shopping-item" *ngFor="let oneItem of myItems" [@itemAnim]>
     <span>{{ oneItem.name}} {{ oneItem.quantity}}</span>
-    <md-checkbox class="shopping-check" (click)="deleteItem(oneItem._id)" [@itemAnim]></md-checkbox>
+    <md-checkbox class="shopping-check" (click)="deleteItem(oneItem._id)"></md-checkbox>
+</md-card>
+<md-card class="shopping-item invisible" [@itemAnim]>
 </md-card>

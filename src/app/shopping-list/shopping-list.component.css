@@ -34,3 +34,7 @@
     right: -9px;
     top: 4px;
 }
+
+.invisible {
+    display: none;
+}

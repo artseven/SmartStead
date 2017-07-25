@@ -66,7 +66,7 @@ export class ShoppingListComponent implements OnInit {
   }
 
     deleteItem(itemId) {
-      this.visible = false;
+      this.oneItem =
     this.cartThang.remove(itemId)
       .then(() => {
         this.routerThang.navigate(['/cart']);
