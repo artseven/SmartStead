@@ -1,31 +1,35 @@
 .example-container {
-  width: auto;
-  height: 400px;
+    width: auto;
+    height: 400px;
 }
 
 .example-sidenav-content {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  padding: 5px;
-  justify-content: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    padding: 5px;
+    justify-content: center;
 }
+
 @media only screen and (max-width: 420px) {
-  .sidenav {
-    width: 60px;
-    opacity: 0.6;
-  }
-
-  .hidden-on-mobile {
-    display: none;
-  }
+    .sidenav {
+        width: 60px;
+        opacity: 0.6;
+    }
+    .hidden-on-mobile {
+        display: none;
+    }
 }
-
 
 @media only screen (min-width: 421px) and (max-width: 1080px) {
-  .sidenav {
-    width: 200px;
-    opacity: 0.6;
-  }
+    .sidenav {
+        width: 200px;
+        opacity: 0.6;
+    }
+}
+
+.my-image-video {
+    width: 140px;
+    height: auto;
 }
