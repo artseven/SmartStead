@@ -12,7 +12,7 @@ import { CartService } from '../services/cart.service';
   trigger('itemAnim', [
     transition(':enter', [
       style({transform: 'translateX(-100%)'}),
-      animate(350)
+      animate(550)
     ]),
     transition(':leave', [
       group([
@@ -24,7 +24,7 @@ import { CartService } from '../services/cart.service';
         }))
       ])
     ])
-  ])
+  ]),
 ]
 })
 

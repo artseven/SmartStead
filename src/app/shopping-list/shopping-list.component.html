@@ -9,5 +9,5 @@
 
 <md-card class="shopping-item" *ngFor="let oneItem of myItems" [@itemAnim]>
     <span>{{ oneItem.name}} {{ oneItem.quantity}}</span>
-    <md-checkbox class="shopping-check" (click)="onShoppingChecked()"></md-checkbox>
+    <md-checkbox class="shopping-check" (click)="onShoppingChecked()" [@itemAnim]></md-checkbox>
 </md-card>
