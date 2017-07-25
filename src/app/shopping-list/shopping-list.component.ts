@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { trigger, style, transition, animate, group } from '@angular/animations';
 import { FormControl } from '@angular/forms';
+
+import { CartService } from '../services/cart.service';
+
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
@@ -26,11 +29,47 @@ import { FormControl } from '@angular/forms';
 })
 
 export class ShoppingListComponent implements OnInit {
-  shoppingItem;
+  myLists: any[] = [];
 
-  onShoppingChecked() {
-    this.shoppingItem.delete();
+  newListTitle: string;
+
+  newCardTitles: string[] = [];
+
+  constructor(
+    private cartThang: CartService
+  ) { }
+
+  ngOnInit() {
+      this.cartThang.shoppingitems()
+        .then((listsFromApi) => {
+            this.myLists = listsFromApi;
+        })
+        .catch((errResponse) => {
+            alert('List error 🐋');
+        });
   }
 
-  ngOnInit() {}
+  makeAList() {
+      this.listThang.createList(this.newListTitle)
+        .then((newListFromApi) => {
+            this.myLists.push(newListFromApi);
+            this.newListTitle = '';
+        })
+        .catch((errResponse) => {
+            alert('List create error 🐋');
+        });
+  }
+
+  makeACard(theList, titleIndex) {
+      const theTitle = this.newCardTitles[titleIndex];
+
+      this.cardThang.createCard(theList._id, theTitle)
+        .then((newCardFromApi) => {
+            theList.cards.push(newCardFromApi);
+            this.newCardTitles[titleIndex] = '';
+        })
+        .catch((errResponse) => {
+            alert('Card create error 🐋');
+        });
+  }
 }

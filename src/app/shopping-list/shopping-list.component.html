@@ -6,7 +6,11 @@
 
     <button md-mini-fab> + </button>
 </form> -->
-
+<form (ngSubmit)="makeACard(oneList, i)">
+    <input class="card" type="text" placeholder="Add a card..." [(ngModel)]="newCardTitles[i]" name="newListTitle[]">
+    <br>
+    <button> Save </button>
+</form>
 <md-input-container>
     <input mdInput value="Disco party!" placeholder="Message" #message>
 </md-input-container>
