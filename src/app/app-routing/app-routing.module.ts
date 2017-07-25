@@ -11,7 +11,7 @@ import { AppComponent } from '../app.component';
 import { HomePageComponent } from '../home-page/home-page.component';
 import { AuthPageComponent } from '../auth-page/auth-page.component';
 import { ShoppingListComponent} from '../shopping-list/shopping-list.component';
-
+import { CalendarComponent } from '../calendar/calendar.component';
 // Routing table
 const routes: Routes = [
   {
@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'camera',
     component: CameraComponent
   },
+  {
+    path: 'calendar',
+    component: CalendarComponent
+  }
   //
   // {
   //   path: 'ac',

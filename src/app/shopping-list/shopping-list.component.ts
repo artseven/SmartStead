@@ -76,7 +76,7 @@ export class ShoppingListComponent implements OnInit {
         });
         setInterval(() => {
           this.update();
-        }, 500);
+        }, 450);
   }
 
 

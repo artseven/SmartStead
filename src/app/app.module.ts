@@ -46,6 +46,7 @@ import { HeaderComponent } from './header/header.component';
 import { AuthPageComponent } from './auth-page/auth-page.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     HeaderComponent,
     AuthPageComponent,
     DialogComponent,
-    ShoppingListComponent
+    ShoppingListComponent,
+    CalendarComponent
   ],
   imports: [
     // Angular main modules
