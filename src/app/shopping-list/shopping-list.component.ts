@@ -3,7 +3,9 @@ import { Component,
    Input,
    EventEmitter,
    ElementRef,
-   OnChanges } from '@angular/core';
+   OnChanges,
+   IterableDiffers,
+   IterableChanges } from '@angular/core';
 import { trigger, style, transition, animate, group } from '@angular/animations';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -45,11 +47,16 @@ export class ShoppingListComponent implements OnInit {
   newItemQuantity: number;
   newCardTitles: string[] = [];
   visible: boolean = true;
-
+  iterableDiffer;
+  changes;
   constructor(
     private cartThang: CartService,
-    private routerThang: Router
-  ) { }
+    private routerThang: Router,
+    private _iterableDiffers: IterableDiffers
+  ) {
+    this.iterableDiffer = this._iterableDiffers.find([]).create(null);
+  }
+
 
   ngOnInit() {
       this.cartThang.shoppingItems()
@@ -60,7 +67,15 @@ export class ShoppingListComponent implements OnInit {
         .catch((errResponse) => {
         });
   }
+  
 
+  // ngDoCheck() {
+  //     const changes = this.iterableDiffer.diff(this.myItems);
+  //     if (changes) {
+  //         console.log('Changes detected!'+ changes);
+  //         // this.myItems.push(changes.additions)
+  //     }
+  // }
     // onFormSubmission(shoppingInput: HTMLInputElement, inputQuantity: HTMLInputElement) {
     //   this.myItems.push({
     //     name: shoppingInput,
@@ -73,14 +88,14 @@ export class ShoppingListComponent implements OnInit {
         .then((newCartFromApi) => {
             this.myItems.push(newCartFromApi);
             this.formProductName = '';
-        })
+         })
         .catch((errResponse) => {
             alert('Item create error 🐋');
         });
   }
 
     deleteItem(itemId) {
-
+    
     this.cartThang.remove(itemId)
       .then(() => {
         this.routerThang.navigate(['/cart']);
