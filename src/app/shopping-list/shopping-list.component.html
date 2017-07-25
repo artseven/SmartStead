@@ -1,4 +1,4 @@
-<h3>Shopping List</h3>
+<h4>Shopping List</h4>
 <md-card class="shopping-item">
     <form class="item-add" (ngSubmit)="addItem()">
         <span class="input-field">
@@ -19,5 +19,5 @@
 
 <md-card class="shopping-item" *ngFor="let oneItem of myItems">
     <span [@itemAnim]>{{ oneItem.name}} {{ oneItem.quantity}} </span>
-    <md-checkbox class="shopping-check" (click)="deleteItem(oneItem._id)"></md-checkbox>
+    <md-checkbox class="shopping-check" (click)="deleteItem(oneItem)"></md-checkbox>
 </md-card>

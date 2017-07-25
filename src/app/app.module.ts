@@ -22,7 +22,8 @@ import {
   MdCheckboxModule,
   MdTabsModule,
   MdTabHeaderPosition,
-  MdSidenavModule
+  MdSidenavModule,
+  MdSnackBarModule
 } from '@angular/material';
 // Components
 import { AppComponent } from './app.component';
@@ -79,6 +80,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     MdCheckboxModule,
     MdTabsModule,
     MdSidenavModule,
+    MdSnackBarModule,
     // Routing
     AppRoutingModule
   ],

@@ -9,6 +9,8 @@ import { Component,
 import { trigger, style, transition, animate, group } from '@angular/animations';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MdSnackBar } from '@angular/material';
+
 import { CartService } from '../services/cart.service';
 
 @Component({
@@ -50,10 +52,12 @@ export class ShoppingListComponent implements OnInit {
   iterableDiffer;
   changes;
   simpleChanges;
+
   constructor(
     private cartThang: CartService,
     private routerThang: Router,
     private _iterableDiffers: IterableDiffers,
+    private snackBar: MdSnackBar
   ) {
     this.iterableDiffer = this._iterableDiffers.find([]).create(null);
   }
@@ -97,17 +101,15 @@ export class ShoppingListComponent implements OnInit {
         .catch((errResponse) => {
             alert('Item create error 🐋');
         });
-          this.routerThang.navigate(['/cart']);
-  }
+    }
 
-    deleteItem(itemId) {
-    this.cartThang.remove(itemId)
-      .then(() => {
-        this.routerThang.navigate(['cart']);
-      })
+    deleteItem(item) {
+    this.cartThang.remove(item._id)
+      .then(() => {})
       .catch((err) => {
         this.errorMessage = 'Could not retrieve item details. Try again later.';
       });
+    this.toast(item.name + ' was deleted');
   }
 
   update() {
@@ -118,5 +120,12 @@ export class ShoppingListComponent implements OnInit {
       }
     })
     .catch(err => console.log(err));
+  }
+
+
+  toast(input) {
+    this.snackBar.open(input, '', {
+      duration: 3000
+    });
   }
 }
