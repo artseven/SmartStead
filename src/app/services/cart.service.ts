@@ -34,4 +34,12 @@ export class CartService {
     .toPromise()
     .then(res => res.json());
   }
+
+    remove(id) {
+    return this.httpThang
+    .delete(
+      this.baseUrl + `/api/cart/${id}`)
+      .toPromise()
+      .then(apiResponse => apiResponse.json())
+  }
 }

@@ -29,8 +29,9 @@ import { CartService } from '../services/cart.service';
 })
 
 export class ShoppingListComponent implements OnInit {
+  item: Object;
   myItems;
-
+  errorMessage;
   newItemName: string;
   newItemQuantity: number;
   newCardTitles: string[] = [];
@@ -60,5 +61,17 @@ export class ShoppingListComponent implements OnInit {
         .catch((errResponse) => {
             alert('Item create error 🐋');
         });
+  }
+
+    deleteItem() {
+    if (!window.confirm('Are you sure?')) {
+      return;
+    }
+
+    this.cartThang.remove(this.item['_id'])
+      .then(() => {})
+      .catch((err) => {
+        this.errorMessage = 'Could not retrieve item details. Try again later.';
+      });
   }
 }
