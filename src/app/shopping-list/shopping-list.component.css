@@ -3,8 +3,9 @@
 }
 
 .shopping-check {
-    position: fixed;
-    right: 40px;
+    position: relative;
+    right: 10px;
+    float: right;
 }
 
 #name-input {

@@ -27,4 +27,5 @@
     <md-checkbox class="shopping-check" (click)="deleteItem(oneItem._id)"></md-checkbox>
 </md-card>
 <md-card class="shopping-item invisible" [@itemAnim]>
+    <span>{{ #shoppingInput}} {{ oneItem.quantity}}</span>
 </md-card>

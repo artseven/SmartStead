@@ -34,6 +34,7 @@ export class ShoppingListComponent implements OnInit {
   errorMessage;
   newItemName: string;
   formProductName;
+  formProductQuantity: number;
   newItemQuantity: number;
   newCardTitles: string[] = [];
   visible: boolean = true;
@@ -54,11 +55,11 @@ export class ShoppingListComponent implements OnInit {
   }
 
   addItem() {
-      this.cartThang.createItem(this.formProductName, this.newItemQuantity)
+      this.cartThang.createItem(this.formProductName, this.formProductQuantity)
         .then((newCartFromApi) => {
             this.myItems.push(newCartFromApi);
-            this.newItemName = '';
-            this.newItemQuantity = 0 ;
+            this.newItemName = this.formProductName;
+            this.newItemQuantity = this.newItemQuantity ;
         })
         .catch((errResponse) => {
             alert('Item create error 🐋');
@@ -66,7 +67,7 @@ export class ShoppingListComponent implements OnInit {
   }
 
     deleteItem(itemId) {
-      this.oneItem =
+      
     this.cartThang.remove(itemId)
       .then(() => {
         this.routerThang.navigate(['/cart']);
