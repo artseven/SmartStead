@@ -6,7 +6,7 @@
 
     <button md-mini-fab> + </button>
 </form> -->
-<form (ngSubmit)="makeACard(oneList, i)">
+<!-- <form (ngSubmit)="makeACard(oneList, i)">
     <input class="card" type="text" placeholder="Add a card..." [(ngModel)]="newCardTitles[i]" name="newListTitle[]">
     <br>
     <button> Save </button>
@@ -25,7 +25,7 @@
 <md-card>
     <span>dummy</span>
     <md-checkbox class="shopping-check"></md-checkbox>
-</md-card>
+</md-card> -->
 
 <!-- <input #itemInput (keyup.enter)="addItem(itemInput.value); itemInput.value=''">
 
@@ -36,3 +36,10 @@
 <!-- <ul *ngIf="items">
     <li *ngFor="let item of items" (click)="removeItem(item)" [@itemAnim]>{{ item }}</li>
 </ul> -->
+
+<div>
+    <ul class="list-of-lists">
+        <li class="list-container" *ngFor="let oneItem of myItems; let i = index">
+        </li>
+    </ul>
+</div>

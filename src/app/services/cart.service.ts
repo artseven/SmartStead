@@ -14,7 +14,7 @@ export class CartService {
     private httpThang: Http
   ) { }
 
-    shoppingItems() {
+  shoppingItems() {
       return this.httpThang
         .get(
           this.baseUrl + '/api/cart',
@@ -24,15 +24,14 @@ export class CartService {
         .then(res => res.json());
   }
 
-  // createCard(listId, title) {
-  //   return this.httpThang
-  //     .post(
-  //       `${this.baseUrl}/api/cart/`,
-  //       { cardTitle: title },
-  //       { withCredentials: true }
-  //     )
-  //     .toPromise()
-  //     .then(res => res.json())
-  // }
-
+  createItem(inputName, amount ) {
+    return this.httpThang
+    .post(
+      this.baseUrl + '/api/cart',
+      { name: inputName, quantity: amount},
+      { withCredentials: true }
+    )
+    .toPromise()
+    .then(res => res.json());
+  }
 }

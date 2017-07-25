@@ -12,7 +12,3 @@
 .md-card {
     z-index: 2;
 }
-
-:host /deep/ .mat-input-placeholder {
-    font-size: 2em;
-}

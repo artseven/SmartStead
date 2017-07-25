@@ -34,6 +34,7 @@ import { TabsComponent } from './tabs/tabs.component';
 
 // Services
 import { SessionService} from './session.service';
+import { CartService } from './services/cart.service';
 
 // routes
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -81,7 +82,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     // Routing
     AppRoutingModule
   ],
-  providers: [SessionService],
+  providers: [SessionService,
+  CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

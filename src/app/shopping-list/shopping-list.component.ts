@@ -29,10 +29,10 @@ import { CartService } from '../services/cart.service';
 })
 
 export class ShoppingListComponent implements OnInit {
-  myLists: any[] = [];
+  myItems: any[] = [];
 
-  newListTitle: string;
-
+  newItemName: string;
+  newItemQuantity: number;
   newCardTitles: string[] = [];
 
   constructor(
@@ -40,36 +40,24 @@ export class ShoppingListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-      this.cartThang.shoppingitems()
-        .then((listsFromApi) => {
-            this.myLists = listsFromApi;
+      this.cartThang.shoppingItems()
+        .then((itemsFromApi) => {
+            this.myItems = itemsFromApi;
         })
         .catch((errResponse) => {
-            alert('List error 🐋');
+            alert('Items error 🐋');
         });
   }
 
-  makeAList() {
-      this.listThang.createList(this.newListTitle)
-        .then((newListFromApi) => {
-            this.myLists.push(newListFromApi);
-            this.newListTitle = '';
+  addItem() {
+      this.cartThang.createItem(this.newItemName, this.newItemQuantity)
+        .then((newCartFromApi) => {
+            this.myItems.push(newCartFromApi);
+            this.newItemName = '';
+            this.newItemQuantity = 0 ;
         })
         .catch((errResponse) => {
-            alert('List create error 🐋');
-        });
-  }
-
-  makeACard(theList, titleIndex) {
-      const theTitle = this.newCardTitles[titleIndex];
-
-      this.cardThang.createCard(theList._id, theTitle)
-        .then((newCardFromApi) => {
-            theList.cards.push(newCardFromApi);
-            this.newCardTitles[titleIndex] = '';
-        })
-        .catch((errResponse) => {
-            alert('Card create error 🐋');
+            alert('Item create error 🐋');
         });
   }
 }
