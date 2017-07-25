@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { trigger, style, transition, animate, group } from '@angular/animations';
 import { FormControl } from '@angular/forms';
-
 import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
 
@@ -49,7 +48,6 @@ export class ShoppingListComponent implements OnInit {
             console.log('ID of the first element in array' + itemsFromApi[0]._id);
         })
         .catch((errResponse) => {
-            alert('Items error 🐋');
         });
   }
 

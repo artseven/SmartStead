@@ -22,3 +22,7 @@
 :host /deep/ .mat-input-placeholder {
     font-size: 2em;
 }
+
+.input-field {
+    max-width: 50px;
+}
