@@ -2,6 +2,7 @@ import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { trigger, style, transition, animate, group } from '@angular/animations';
 import { FormControl } from '@angular/forms';
 
+import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
 
 @Component({
@@ -29,7 +30,7 @@ import { CartService } from '../services/cart.service';
 })
 
 export class ShoppingListComponent implements OnInit {
-  item: Object;
+  oneItem: Object;
   myItems;
   errorMessage;
   newItemName: string;
@@ -37,14 +38,15 @@ export class ShoppingListComponent implements OnInit {
   newCardTitles: string[] = [];
 
   constructor(
-    private cartThang: CartService
+    private cartThang: CartService,
+    private routerThang: Router
   ) { }
 
   ngOnInit() {
       this.cartThang.shoppingItems()
         .then((itemsFromApi) => {
             this.myItems = itemsFromApi;
-            console.log('ITEMS FROM API' + itemsFromApi);
+            console.log('ID of the first element in array' + itemsFromApi[0]._id);
         })
         .catch((errResponse) => {
             alert('Items error 🐋');
@@ -63,13 +65,12 @@ export class ShoppingListComponent implements OnInit {
         });
   }
 
-    deleteItem() {
-    if (!window.confirm('Are you sure?')) {
-      return;
-    }
+    deleteItem(itemId) {
 
-    this.cartThang.remove(this.item['_id'])
-      .then(() => {})
+    this.cartThang.remove(itemId)
+      .then(() => {
+        this.routerThang.navigate(['/cart']);
+      })
       .catch((err) => {
         this.errorMessage = 'Could not retrieve item details. Try again later.';
       });

@@ -8,6 +8,6 @@
 </form> -->
 
 <md-card class="shopping-item" *ngFor="let oneItem of myItems" [@itemAnim]>
-    <span>{{ oneItem.name}} {{ oneItem.quantity}}</span>
-    <md-checkbox class="shopping-check" (click)="deleteItem()" [@itemAnim]></md-checkbox>
+    <span>{{ oneItem.name}} {{ oneItem.quantity}} {{oneItem._id}}</span>
+    <md-checkbox class="shopping-check" (click)="deleteItem(oneItem._id)" [@itemAnim]></md-checkbox>
 </md-card>
