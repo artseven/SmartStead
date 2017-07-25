@@ -19,10 +19,18 @@
     width: 100%;
 }
 
-:host /deep/ .mat-input-placeholder {
-    font-size: 2em;
+#quantity {
+    max-width: 60px;
 }
 
-.input-field {
-    max-width: 50px;
+#name-input {
+    max-width: 200px;
+    margin-right: 5px;
+}
+
+.my-add-button {
+    background-color: #3ddb93;
+    position: relative;
+    right: -9px;
+    top: 4px;
 }

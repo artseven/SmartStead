@@ -11,7 +11,7 @@ import { CartService } from '../services/cart.service';
  animations: [
   trigger('itemAnim', [
     transition(':enter', [
-      style({transform: 'translateX(-100%)'}),
+      style({transform: 'translateY(-100%)'}),
       animate(550)
     ]),
     transition(':leave', [
@@ -33,8 +33,10 @@ export class ShoppingListComponent implements OnInit {
   myItems;
   errorMessage;
   newItemName: string;
+  formProductName;
   newItemQuantity: number;
   newCardTitles: string[] = [];
+  visible: boolean = true;
 
   constructor(
     private cartThang: CartService,
@@ -52,7 +54,7 @@ export class ShoppingListComponent implements OnInit {
   }
 
   addItem() {
-      this.cartThang.createItem(this.newItemName, this.newItemQuantity)
+      this.cartThang.createItem(this.formProductName, this.newItemQuantity)
         .then((newCartFromApi) => {
             this.myItems.push(newCartFromApi);
             this.newItemName = '';
@@ -64,7 +66,7 @@ export class ShoppingListComponent implements OnInit {
   }
 
     deleteItem(itemId) {
-
+      this.visible = false;
     this.cartThang.remove(itemId)
       .then(() => {
         this.routerThang.navigate(['/cart']);

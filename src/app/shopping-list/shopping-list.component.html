@@ -6,17 +6,22 @@
 
     <button md-mini-fab> + </button>
 </form> -->
-<form class="item-add" (ngSubmit)="createNewItem()">
-    <span class="input-field">
-        <input id="name" type="text" class="validate" required="true">
-        <label for="name">What are you paying for? </label>
-    </span>
-    <span class="input-field">
-        <input id="name" type="text" class="validate" required="true">
-        <label for="name">What are you paying for? </label>
-    </span>
-</form>
+<md-card class="shopping-item">
+    <form class="item-add" (ngSubmit)="addItem()">
+        <span class="input-field">
+            <label for="name-input">Name </label>
+            <input id="name-input" type="text" class="validate" required="true"
+            [(ngModel)]="formProductName" name="productName">
+        </span>
+        <span class="input-field">
+            <label for="quantity">Quantity </label>
+            <input id="quantity" type="number" class="validate" [(ngModel)]="formProductQuantity" name="productQuantity">
+        </span>
+        <button class="my-add-button" md-mini-fab type="submit"> + </button>
+    </form>
+</md-card>
+
 <md-card class="shopping-item" *ngFor="let oneItem of myItems" [@itemAnim]>
-    <span>{{ oneItem.name}} {{ oneItem.quantity}} {{oneItem._id}}</span>
+    <span>{{ oneItem.name}} {{ oneItem.quantity}}</span>
     <md-checkbox class="shopping-check" (click)="deleteItem(oneItem._id)" [@itemAnim]></md-checkbox>
 </md-card>

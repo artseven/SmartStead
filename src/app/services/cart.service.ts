@@ -24,11 +24,11 @@ export class CartService {
         .then(res => res.json());
   }
 
-  createItem(inputName, amount ) {
+  createItem(name: string, amount: number) {
     return this.httpThang
     .post(
       this.baseUrl + '/api/cart',
-      { name: inputName, quantity: amount},
+      { productName: name, productQuantity: amount   },
       { withCredentials: true }
     )
     .toPromise()
