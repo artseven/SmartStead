@@ -1,11 +1,3 @@
-<!-- <form class="item-add" (ngSubmit)="createNewItem()">
-    <label for="name-input">Name</label>
-    <input id="name-input" class="input-field" type="text" placeholder="vegetables" [(ngModel)]="formProductName" name="productName">
-    <label for="quantity-input">Quantity</label>
-    <input id="quantity-input" type="number" placeholder="0" [(ngModel)]="formProductQuantity" name="productQuantity">
-
-    <button md-mini-fab> + </button>
-</form> -->
 <h3>Shopping List</h3>
 <md-card class="shopping-item">
     <form class="item-add" (ngSubmit)="addItem()">
@@ -27,6 +19,6 @@
 
 <md-card class="shopping-item" *ngFor="let oneItem of myItems" [@itemAnim]>
     <span>{{ oneItem.name}} {{ oneItem.quantity}}</span>
-    <span *ngIf="oneItem.name == ''"> {{shoppingInput}} </span>
+    <span *ngIf="oneItem.name === ''"> THIS-> {{shoppingInput.value}} </span>
     <md-checkbox class="shopping-check" (click)="deleteItem(oneItem._id)"></md-checkbox>
 </md-card>

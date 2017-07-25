@@ -61,19 +61,18 @@ export class ShoppingListComponent implements OnInit {
         });
   }
 
-    onFormSubmission(shoppingInput: HTMLInputElement, inputQuantity: HTMLInputElement) {
-      this.myItems.push({
-        name: shoppingInput,
-        quantity: inputQuantity
-        })
-    }
+    // onFormSubmission(shoppingInput: HTMLInputElement, inputQuantity: HTMLInputElement) {
+    //   this.myItems.push({
+    //     name: shoppingInput,
+    //     quantity: inputQuantity
+    //     })
+    // }
 
     addItem() {
       this.cartThang.createItem(this.formProductName, this.formProductQuantity)
         .then((newCartFromApi) => {
             this.myItems.push(newCartFromApi);
-            this.newItemName = this.formProductName;
-            this.newItemQuantity = this.formProductQuantity ;
+            this.formProductName = '';
         })
         .catch((errResponse) => {
             alert('Item create error 🐋');
