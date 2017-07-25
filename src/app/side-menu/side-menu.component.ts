@@ -10,6 +10,9 @@ import { SessionService } from '../session.service';
   styleUrls: ['./side-menu.component.css']
 })
 export class SideMenuComponent implements OnInit {
+  baseUrl: string = `http://192.168.0.106/tmpfs/snap.jpg?num=`;
+  currentUrl: string;
+  i: number = 1;
   selectedIndex: number = 1;
   selectChange(): void {
     console.log('Selected INDEX: ' + this.selectedIndex);
@@ -45,13 +48,22 @@ export class SideMenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+     setInterval(() => {
+          this.dynamicUrl();
+        }, 50);
   }
 
   onShoppingClicked() {
     this.routerThang.navigate(['/cart'])
   }
-  
   onCalendarClicked() {
-    
+  }
+
+  dynamicUrl() {
+   this.currentUrl = `${this.baseUrl}` + `${this.i}`;
+   this.i ++;
+   console.log('URL IS' + this.currentUrl);
+   return this.currentUrl;
+  //  return this.url;
   }
 }
