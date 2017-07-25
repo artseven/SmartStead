@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule} from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormControl } from '@angular/forms'
-import { HttpModule } from '@angular/http';
+import { Http, HttpModule } from '@angular/http';
 
 import 'rxjs/Rx';
 import 'hammerjs';

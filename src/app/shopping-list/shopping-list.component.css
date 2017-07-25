@@ -8,9 +8,13 @@
 }
 
 #quantity-input {
-    max-width: 20px;
+    max-width: 25px;
 }
 
 .item-add {
     width: 100%;
+}
+
+:host /deep/ .mat-input-placeholder {
+    font-size: 2em;
 }

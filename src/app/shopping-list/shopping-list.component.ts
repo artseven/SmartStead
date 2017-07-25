@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { trigger, style, transition, animate, group } from '@angular/animations';
-
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
