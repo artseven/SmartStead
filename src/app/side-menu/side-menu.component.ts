@@ -38,9 +38,7 @@ export class SideMenuComponent implements OnInit {
 
     }
   }
-    onShoppingClicked() {
-    this.routerThang.navigate(['/cart'])
-  }
+
   constructor(
     private sessionThang: SessionService,
     private routerThang: Router
@@ -49,4 +47,11 @@ export class SideMenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  onShoppingClicked() {
+    this.routerThang.navigate(['/cart'])
+  }
+  
+  onCalendarClicked() {
+    
+  }
 }

@@ -9,7 +9,7 @@
       <md-icon>fingerprint</md-icon>
       <span>Log In</span>
     </button>
-        <button md-menu-item (click)="homeClicked()">
+        <button md-menu-item *ngIf="isLoggedIn" (click)="homeClicked()">
       <md-icon>home</md-icon>
       <span>Home</span>
     </button>
