@@ -29,7 +29,7 @@ import { CartService } from '../services/cart.service';
 })
 
 export class ShoppingListComponent implements OnInit {
-  myItems: any[] = [];
+  myItems;
 
   newItemName: string;
   newItemQuantity: number;
@@ -43,6 +43,7 @@ export class ShoppingListComponent implements OnInit {
       this.cartThang.shoppingItems()
         .then((itemsFromApi) => {
             this.myItems = itemsFromApi;
+            console.log('ITEMS FROM API' + itemsFromApi);
         })
         .catch((errResponse) => {
             alert('Items error 🐋');
