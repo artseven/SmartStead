@@ -38,7 +38,7 @@ export class SideMenuComponent implements OnInit {
 
     }
   }
-      onShoppingClicked() {
+    onShoppingClicked() {
     this.routerThang.navigate(['/cart'])
   }
   constructor(

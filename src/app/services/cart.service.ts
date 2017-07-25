@@ -28,7 +28,7 @@ export class CartService {
     return this.httpThang
     .post(
       this.baseUrl + '/api/cart',
-      { productName: name, productQuantity: amount   },
+      { productName: name, productQuantity: amount },
       { withCredentials: true }
     )
     .toPromise()

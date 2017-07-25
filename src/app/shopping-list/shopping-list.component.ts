@@ -5,7 +5,7 @@ import { Component,
    ElementRef,
    OnChanges,
    IterableDiffers,
-   IterableChanges } from '@angular/core';
+   SimpleChanges } from '@angular/core';
 import { trigger, style, transition, animate, group } from '@angular/animations';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -19,11 +19,11 @@ import { CartService } from '../services/cart.service';
   trigger('itemAnim', [
     transition(':enter', [
       style({transform: 'translateY(-100%)'}),
-      animate(550)
+      animate(250)
     ]),
     transition(':leave', [
       group([
-        animate('0.2s ease', style({
+        animate('0.4s ease', style({
           transform: 'translate(150px,25px)'
         })),
         animate('0.5s 0.2s ease', style({
@@ -49,15 +49,19 @@ export class ShoppingListComponent implements OnInit {
   visible: boolean = true;
   iterableDiffer;
   changes;
+  simpleChanges;
   constructor(
     private cartThang: CartService,
     private routerThang: Router,
-    private _iterableDiffers: IterableDiffers
+    private _iterableDiffers: IterableDiffers,
   ) {
     this.iterableDiffer = this._iterableDiffers.find([]).create(null);
   }
 
-
+  // ngOnChanges(changes: SimpleChanges) {
+  //   console.log('ngOnChanges called!');
+  //   console.log(changes);
+  // }
   ngOnInit() {
       this.cartThang.shoppingItems()
         .then((itemsFromApi) => {
@@ -66,42 +70,53 @@ export class ShoppingListComponent implements OnInit {
         })
         .catch((errResponse) => {
         });
+        setInterval(() => {
+          this.update();
+        }, 500);
   }
-  
+
 
   // ngDoCheck() {
   //     const changes = this.iterableDiffer.diff(this.myItems);
+  //     console.log("SIMPLE CHANGE" + changes)
   //     if (changes) {
   //         console.log('Changes detected!'+ changes);
   //         // this.myItems.push(changes.additions)
   //     }
   // }
-    // onFormSubmission(shoppingInput: HTMLInputElement, inputQuantity: HTMLInputElement) {
-    //   this.myItems.push({
-    //     name: shoppingInput,
-    //     quantity: inputQuantity
-    //     })
-    // }
+  // }
+
 
     addItem() {
       this.cartThang.createItem(this.formProductName, this.formProductQuantity)
         .then((newCartFromApi) => {
-            this.myItems.push(newCartFromApi);
+            this.myItems.unshift(newCartFromApi);
             this.formProductName = '';
-         })
+            this.formProductQuantity = 0;
+        })
         .catch((errResponse) => {
             alert('Item create error 🐋');
         });
+          this.routerThang.navigate(['/cart']);
   }
 
     deleteItem(itemId) {
-    
     this.cartThang.remove(itemId)
       .then(() => {
-        this.routerThang.navigate(['/cart']);
+        this.routerThang.navigate(['cart']);
       })
       .catch((err) => {
         this.errorMessage = 'Could not retrieve item details. Try again later.';
       });
+  }
+
+  update() {
+    this.cartThang.shoppingItems()
+    .then( fetchedData => { 
+      if (JSON.stringify(this.myItems) != JSON.stringify(fetchedData)) {
+        this.myItems = fetchedData
+      }
+    })
+    .catch(err => console.log(err));
   }
 }
