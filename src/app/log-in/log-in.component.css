@@ -6,7 +6,7 @@
     background-color: blue;
     color: white;
     width: 140px;
-    margin-left: 50px;
+    margin-left: 40px;
 }
 
 #email-input {
@@ -14,20 +14,17 @@
 }
 
 .login {
-    padding-left: 75px;
+    width: 250px;
+    align-items: center;
+    margin-left: 70px;
+    margin-top: 50px;
 }
 
 #password-input {
     max-width: 200px;
 }
 
-.login-input {
-    margin-left: 50px;
-}
-
-.md-card {
-    z-index: 2;
-}
+.login-input {}
 
 .error {
     background-color: mistyrose;
@@ -40,5 +37,5 @@
 }
 
 .head-title {
-    margin-left: 140px;
+    text-align: center;
 }
