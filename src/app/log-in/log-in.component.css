@@ -2,6 +2,10 @@
     style: none;
 }
 
+body {
+    color: darkgrey;
+}
+
 .login-button {
     background-color: blue;
     color: white;
