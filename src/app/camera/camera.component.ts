@@ -18,4 +18,19 @@ export class CameraComponent implements OnInit {
   ngOnInit() {
   }
 
+  onLeftClicked() {
+    this.cameraService.turnLeft();
+  }
+  
+  onRightClicked() {
+    this.cameraService.turnRight();
+  }
+
+  onDownClicked() {
+    this.cameraService.turnDown();
+  }
+
+  onUpClicked() {
+    this.cameraService.turnUp();
+  }
 }

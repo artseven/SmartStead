@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000'
+  apiUrl: 'http://localhost:3000',
+  requestUrl: 'http://usa22543.mytenvis.org/cgi-bin/hi3510/ptzctrl.cgi?-step=1&-act='
 };
