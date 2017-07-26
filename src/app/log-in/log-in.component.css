@@ -6,11 +6,15 @@
     background-color: blue;
     color: white;
     width: 140px;
-    margin-left: 100px;
+    margin-left: 50px;
 }
 
 #email-input {
     max-width: 200px;
+}
+
+.login {
+    padding-left: 75px;
 }
 
 #password-input {
@@ -29,6 +33,10 @@
     background-color: mistyrose;
     border: 1px solid red;
     border-radius: 5px;
+    max-width: 150px;
+    min-height: 10px;
+    text-align: center;
+    margin-left: 50px;
 }
 
 .head-title {
