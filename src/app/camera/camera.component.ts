@@ -21,7 +21,6 @@ export class CameraComponent implements OnInit {
   onLeftClicked() {
     this.cameraService.turnLeft();
   }
-  
   onRightClicked() {
     this.cameraService.turnRight();
   }
