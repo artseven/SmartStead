@@ -19,6 +19,6 @@
 </md-card>
 
 <md-card class="shopping-item" *ngFor="let oneItem of myItems">
-    <span [@itemAnim]>{{ oneItem.name}} {{ oneItem.quantity}} </span>
+    <span [@itemAnim]>{{ oneItem.name}} </span><span class="quantity-box"> {{ oneItem.quantity}}</span>
     <md-checkbox class="shopping-check" (click)="deleteItem(oneItem)"></md-checkbox>
 </md-card>

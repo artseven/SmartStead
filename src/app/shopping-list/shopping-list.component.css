@@ -75,6 +75,11 @@
 
 #shopping-header {
     background-color: lightblue;
-    padding: 25px 50px 25px 50px;
-    border-radius: 10px;
+    /* padding: 25px 50px 25px 50px;
+    border-radius: 10px; */
+}
+
+.quantity {
+    box-sizing: border-box;
+    border: 1px solid black;
 }

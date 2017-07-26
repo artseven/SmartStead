@@ -13,7 +13,7 @@ export class CameraService {
   ) { }
 
 
-  getCameraVideo () {
+  turnLeft () {
     return this.httpRouter
     .get(
       this.baseUrl + '/api/camera',
