@@ -16,26 +16,50 @@
     max-width: 25px;
 }
 
+
+/* label focus color */
+
+.input-field input[type=text]:focus+label {
+    color: black;
+}
+
+
+/* label underline focus color */
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid rgb(66, 133, 244);
+    box-shadow: 0 1px 0 0;
+}
+
 .item-add {
     width: 100%;
 }
 
 #quantity {
-    max-width: 60px;
+    max-width: 50px;
 }
 
 #name-input {
-    max-width: 200px;
+    max-width: 180px;
     margin-right: 5px;
+    color: rgb(66, 133, 244);
 }
 
 .my-add-button {
-    background-color: #3ddb93;
+    background-color: rgb(66, 133, 244);
+    color: white;
     position: relative;
+    max-width: 25px;
     right: -9px;
     top: 4px;
 }
 
 .invisible {
     display: none;
+}
+
+#shopping-header {
+    background-color: lightblue;
+    padding: 25px 50px 25px 50px;
+    border-radius: 10px;
 }

@@ -1,9 +1,9 @@
-<h4>Shopping List</h4>
+<md-toolbar id="shopping-header">Shopping List</md-toolbar>
 <md-card class="shopping-item">
     <form class="item-add" (ngSubmit)="addItem()">
         <span class="input-field">
-            <label for="name-input">Name </label>
-            <input id="name-input" type="text" class="validate" required="true"
+            <label for="name-input">Name </label> 
+            <input id="name-input" type="text" class="validate" tabIndex="0" required="true"
             [(ngModel)]="formProductName" name="productName" >
         </span>
         <span class="input-field">
@@ -11,8 +11,9 @@
             <input id="quantity" type="number" class="validate"
              [(ngModel)]="formProductQuantity" name="productQuantity">
         </span>
-        <button class="my-add-button" md-mini-fab type="submit">
-         + 
+
+        <button class="my-add-button" md-raised-button type="submit">
+         Add
         </button>
     </form>
 </md-card>

@@ -76,7 +76,7 @@ export class ShoppingListComponent implements OnInit {
         });
         setInterval(() => {
           this.update();
-        }, 450);
+        }, 1000);
   }
 
 
@@ -96,7 +96,6 @@ export class ShoppingListComponent implements OnInit {
         .then((newCartFromApi) => {
             this.myItems.unshift(newCartFromApi);
             this.formProductName = '';
-            this.formProductQuantity = 0;
         })
         .catch((errResponse) => {
             alert('Item create error 🐋');
