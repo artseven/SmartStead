@@ -63,7 +63,7 @@ export class SideMenuComponent implements OnInit {
   dynamicUrl() {
    this.currentUrl = `${this.baseUrl}` + `${this.i}`;
    this.i ++;
-   console.log('URL IS' + this.currentUrl);
+  //  console.log('URL IS' + this.currentUrl);
    return this.currentUrl;
   //  return this.url;
   }

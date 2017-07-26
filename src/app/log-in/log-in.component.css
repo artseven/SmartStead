@@ -6,9 +6,31 @@
     background-color: blue;
     color: white;
     width: 140px;
-    align-content: center;
+    margin-left: 100px;
+}
+
+#email-input {
+    max-width: 200px;
+}
+
+#password-input {
+    max-width: 200px;
+}
+
+.login-input {
+    margin-left: 50px;
 }
 
 .md-card {
     z-index: 2;
+}
+
+.error {
+    background-color: mistyrose;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.head-title {
+    margin-left: 140px;
 }
