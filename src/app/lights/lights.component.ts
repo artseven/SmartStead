@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-lights',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LightsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private httpLight: Http
+  ) { }
 
   ngOnInit() {
+   
+  }
+
+  onDimmerSubmit(){
+
   }
 
 }
