@@ -1,10 +1,10 @@
 #up-button {
-  position: relative;
-  bottom: 35px;
-  margin-top: 15px;
+    position: relative;
+    bottom: 35px;
+    margin-top: 15px;
 }
 
 #down-button {
-  position: relative;
-  right: 0px;
+    position: relative;
+    right: 0px;
 }
