@@ -47,6 +47,7 @@ import { AuthPageComponent } from './auth-page/auth-page.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { DeviceCameraComponent } from './device-camera/device-camera.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     AuthPageComponent,
     DialogComponent,
     ShoppingListComponent,
-    CalendarComponent
+    CalendarComponent,
+    DeviceCameraComponent
   ],
   imports: [
     // Angular main modules

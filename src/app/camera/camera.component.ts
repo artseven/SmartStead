@@ -3,6 +3,8 @@ import { MdButton } from '@angular/material';
 
 
 import { CameraService } from '../services/camera.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-camera',
@@ -12,7 +14,8 @@ import { CameraService } from '../services/camera.service';
 export class CameraComponent implements OnInit {
 
   constructor(
-    private cameraService: CameraService
+    private cameraService: CameraService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -31,5 +34,9 @@ export class CameraComponent implements OnInit {
 
   onUpClicked() {
     this.cameraService.turnUp();
+  }
+
+  onToggleClicked() {
+    this.router.navigate(['/device-camera']);
   }
 }
