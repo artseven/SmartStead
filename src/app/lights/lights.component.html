@@ -1,4 +1,6 @@
-<label for="md-slider">Dimmer</label>
-<md-slider #lightsSlider></md-slider>
 <label for="md-slide-toggle">Switch</label>
-<md-slide-toggle #lightsToggle></md-slide-toggle>
+<md-slide-toggle primary #lightsToggle></md-slide-toggle>
+<br>
+<label for="md-slider">Dimmer</label>
+<md-slider #lightsSlider class="dimmer" [disabled]="disabled" [invert]="invert" [max]="250" [min]="0" [step]="20" [thumb-label]="thumbLabel" [tick-interval]="tickInterval" [value]="value" [vertical]="vertical">
+</md-slider>
