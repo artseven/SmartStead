@@ -6,15 +6,16 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class LightService {
   requestLightUrl: string = environment.requestLightUrl;
-  clipMessage: Object;
+  argument: object;
+  // header: object = environment.headers;
   constructor(
     private httpRouter: Http
   ) { }
 
-  submitDimmer(){
-    this.httpRouter.post(
-      this.requestLightUrl + this.clipMessage,
-      {withCredentials: true}
+  submitDimmer(argument: object) {
+        this.httpRouter.post(
+      this.requestLightUrl, this.argument 
+      // this.header
     )
     .toPromise()
     .then(res => res.json());
