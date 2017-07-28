@@ -3,9 +3,8 @@
 }
 
 .shopping-check {
-    position: relative;
-    right: 20px;
     float: right;
+    margin-right: 20px;
 }
 
 #name-input {
@@ -79,7 +78,29 @@
     border-radius: 10px; */
 }
 
-.quantity {
-    box-sizing: border-box;
-    border: 1px solid black;
+.quantity-box {
+    position: relative;
+    left: 200px;
+    float: left;
+    /* margin-right: 50px; */
+    padding: 2px;
+}
+
+.paper-snackbar {
+    transition-property: opacity, bottom, left, right, width, margin, border-radius;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    font-family: RobotoDraft;
+    font-size: 14px;
+    min-height: 14px;
+    background-color: #323232;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    line-height: 22px;
+    padding: 18px 24px;
+    bottom: 0px;
+    opacity: 0;
 }

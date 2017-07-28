@@ -108,7 +108,7 @@ export class ShoppingListComponent implements OnInit {
       .catch((err) => {
         this.errorMessage = 'Could not retrieve item details. Try again later.';
       });
-    this.toast(item.name + ' was deleted');
+    this.toast(item.name + ' was deleted from cart');
   }
 
   update() {
@@ -124,7 +124,7 @@ export class ShoppingListComponent implements OnInit {
 
   toast(input) {
     this.snackBar.open(input, '', {
-      duration: 3000
+      duration: 4000
     });
   }
 }

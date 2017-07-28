@@ -1,4 +1,4 @@
-<md-toolbar id="shopping-header">Shopping List</md-toolbar>
+<md-toolbar id="shopping-header"> <i class="material-icons">shopping_cart</i>Shopping List</md-toolbar>
 <md-card class="shopping-item">
     <form class="item-add" (ngSubmit)="addItem()">
         <span class="input-field">
@@ -19,6 +19,11 @@
 </md-card>
 
 <md-card class="shopping-item" *ngFor="let oneItem of myItems">
-    <span [@itemAnim]>{{ oneItem.name}} </span><span class="quantity-box"> {{ oneItem.quantity}}</span>
-    <md-checkbox class="shopping-check" (click)="deleteItem(oneItem)"></md-checkbox>
+    <span [@itemAnim]>{{ oneItem.name}} </span>
+    <span class="quantity-box"> {{ oneItem.quantity}}</span>
+    <span>
+    <md-checkbox class="shopping-check" (click)="deleteItem(oneItem)">
+        <!-- <i class="material-icons">remove_shopping_cart</i> -->
+    </md-checkbox>
+    </span>
 </md-card>
