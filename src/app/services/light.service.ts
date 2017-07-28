@@ -14,8 +14,7 @@ export class LightService {
 
   submitDimmer(argument: object) {
         this.httpRouter.post(
-      this.requestLightUrl, this.argument 
-      // this.header
+      this.requestLightUrl, this.argument
     )
     .toPromise()
     .then(res => res.json());

@@ -13,7 +13,7 @@ export class LightsComponent implements OnInit {
     bridgeId: '001788fffe4c72e9', clipCommand: {
       url:
       '/api/0/groups/0/action', method: 'PUT', body:
-      { 'on': false, 'bri': 100 }
+      { 'on': true, 'bri': 100 }
     }
   }
   constructor(
