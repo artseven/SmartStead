@@ -18,32 +18,34 @@
 
 /* label focus color */
 
-.input-field input[type=text]:focus+label {
+
+/* .input-field input[type=text]:focus+label {
     color: black;
-}
+} */
 
 
-/* label underline focus color */
-
-.input-field input[type=password]:focus {
+/* label underline focus color .input-field input[type=password]:focus {
     border-bottom: 1px solid rgb(66, 133, 244);
     box-shadow: 0 1px 0 0;
-}
+} */
 
 
 /* label focus color */
 
-.input-field input[type=text]:focus+label {
+
+/* .input-field input[type=text]:focus+label {
     color: rgb(66, 133, 244);
-}
+} */
 
 
 /* label underline focus color */
 
+
+/* 
 .input-field input[type=password]:focus {
     border-bottom: 1px solid rgb(66, 133, 244);
     box-shadow: 0 1px 0 0;
-}
+} */
 
 .item-add {
     width: 100%;
@@ -56,7 +58,7 @@
 #name-input {
     max-width: 180px;
     margin-right: 5px;
-    color: rgb(66, 133, 244);
+    /* color: rgb(66, 133, 244); */
 }
 
 .my-add-button {
@@ -73,7 +75,7 @@
 }
 
 #shopping-header {
-    background-color: lightblue;
+    background-color: darkgrey;
     /* padding: 25px 50px 25px 50px;
     border-radius: 10px; */
 }

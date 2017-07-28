@@ -108,7 +108,7 @@ export class ShoppingListComponent implements OnInit {
       .catch((err) => {
         this.errorMessage = 'Could not retrieve item details. Try again later.';
       });
-    this.toast(item.name + ' was deleted from cart');
+    this.toast(item.name + ' was deleted from shopping cart');
   }
 
   update() {
