@@ -51,7 +51,7 @@ export class SideMenuComponent implements OnInit {
   ngOnInit() {
      setInterval(() => {
           this.dynamicUrl();
-        }, 230);
+        }, 300);
   }
 
   onShoppingClicked() {

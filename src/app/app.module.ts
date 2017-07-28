@@ -37,6 +37,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { SessionService} from './session.service';
 import { CartService } from './services/cart.service';
 import { CameraService } from './services/camera.service';
+import { LightService } from './services/light.service';
 // routes
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -91,7 +92,8 @@ import { DeviceCameraComponent } from './device-camera/device-camera.component';
   providers: [
     SessionService,
     CartService,
-    CameraService
+    CameraService,
+    LightService
   ],
   bootstrap: [AppComponent]
 })

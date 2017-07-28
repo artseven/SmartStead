@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { LightService } from '../services/light.service';
+
 
 @Component({
   selector: 'app-lights',
@@ -9,15 +11,19 @@ import { Http } from '@angular/http';
 export class LightsComponent implements OnInit {
 
   constructor(
-    private httpLight: Http
+    private httpLight: Http,
+    private lightThing: LightService
   ) { }
 
   ngOnInit() {
-   
-  }
 
-  onDimmerSubmit(){
+    }
 
-  }
+  // onDimmerSubmit(){
+  //   this.httpLight.post(
+
+  //   )
+
+  // }
 
 }
