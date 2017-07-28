@@ -6,15 +6,16 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class LightService {
   requestLightUrl: string = environment.requestLightUrl;
-  argument: object;
+  body ;
+  header: Object = 'Access-Control-Allow-Origin: *';
   // header: object = environment.headers;
   constructor(
     private httpRouter: Http
   ) { }
 
-  submitDimmer(argument: object) {
+  submitDimmer(data: object) {
         this.httpRouter.post(
-      this.requestLightUrl, this.argument
+      this.requestLightUrl, this.body, this.header
     )
     .toPromise()
     .then(res => res.json());
