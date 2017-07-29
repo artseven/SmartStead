@@ -38,7 +38,7 @@ export class LightService {
     return this.httpRouter
       .post(
       this.baseUrl + '/api/lights/on',
-      {}
+      {withCredentials: true}
       )
       .toPromise()
       .then(res => res.json());
