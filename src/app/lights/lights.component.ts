@@ -27,12 +27,30 @@ export class LightsComponent implements OnInit {
     });
   }
 
-  onDimmerSubmit() {
-    this.lightThing.submitDimmer()
+  onOffSubmit() {
+    this.lightThing.submitOff()
     .then(() => { })
       .catch((err) => {
         this.errorMessage = 'Could not retrieve item details. Try again later.';
       });
-    this.toast(this.myClipMessage + ' was sent');
+    this.toast('Turning living-room lights OFF');
+  }
+
+  onOnSubmit() {
+    this.lightThing.submitOn()
+      .then(() => { })
+      .catch((err) => {
+        this.errorMessage = 'Could not retrieve item details. Try again later.';
+      });
+    this.toast('Turning living-room lights ON');
+  }
+
+  onDimmerSubmit() {
+    this.lightThing.submitDimmer()
+      .then(() => { })
+      .catch((err) => {
+        this.errorMessage = 'Could not retrieve item details. Try again later.';
+      });
+    this.toast('Turning living-room lights ON DIMMER');
   }
 }

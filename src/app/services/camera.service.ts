@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class CameraService {
   baseUrl: string = environment.apiUrl;
-  requestUrl: string = environment.requestUrl;
+  message: string;
 
   constructor(
     private httpRouter: Http
@@ -15,9 +15,9 @@ export class CameraService {
 
   turnLeft () {
     this.httpRouter
-    .get(
-      this.requestUrl + 'left&-speed=45',
-      { withCredentials: true}
+    .post(
+      this.baseUrl + '/api/camera/left',
+      {}
     )
     .toPromise()
     .then(res => res.json());
@@ -25,30 +25,31 @@ export class CameraService {
 
   turnRight () {
     this.httpRouter
-    .get(
-      this.requestUrl + 'right&-speed=45',
-      { withCredentials: true}
+    .post(
+      this.baseUrl + '/api/camera/right',
+      {}
     )
     .toPromise()
-    .then(res => res.json());
+    .then(res => res);
   }
 
   turnDown () {
     this.httpRouter
-    .get(
-      this.requestUrl + 'down&-speed=45',
-      { withCredentials: true}
+    .post(
+      this.baseUrl + '/api/camera/down',
+      {}
     )
     .toPromise()
-    .then(res => res.json());
+    .then(res => res);
   }
+
   turnUp () {
     this.httpRouter
-    .get(
-      this.requestUrl + 'up&-speed=45',
-      { withCredentials: true}
+    .post(
+      this.baseUrl + '/api/camera/up',
+      {}
     )
     .toPromise()
-    .then(res => res.json());
+    .then(res => res);
   }
 }
