@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class LightService {
   baseUrl: string = environment.apiUrl;
-  requestLightUrl: string = environment.requestLightUrl;
+  // requestLightUrl: string = environment.requestLightUrl;
   data ;
   header: Object = 'Access-Control-Allow-Origin: *';
   // header: object = environment.headers;
@@ -37,7 +37,7 @@ export class LightService {
   submitDimmer() {
     return this.httpRouter
       .post(
-      this.baseUrl + '/api/lights/on',
+      this.baseUrl + '/api/lights/off',
       {withCredentials: true}
       )
       .toPromise()
