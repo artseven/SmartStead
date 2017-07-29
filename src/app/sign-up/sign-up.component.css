@@ -1,0 +1,51 @@
+body {
+    color: darkgrey;
+}
+
+.login-button {
+    background-color: blue;
+    color: white;
+    width: 140px;
+    margin-left: 40px;
+}
+
+#email-input {
+    max-width: 200px;
+}
+
+.login {
+    width: 250px;
+    align-items: center;
+    margin-left: 70px;
+    margin-top: 50px;
+}
+
+#password-input {
+    max-width: 200px;
+}
+
+.error {
+    background-color: mistyrose;
+    border: 1px solid red;
+    border-radius: 5px;
+    max-width: 150px;
+    min-height: 10px;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.success {
+    background-color:  lightblue;
+    border: 1px solid blue;
+    color: white;
+    border-radius: 5px;
+    max-width: 150px;
+    min-height: 10px;
+    text-align: center;
+    margin-left: 40px;
+}
+
+.head-title {
+    text-align: center;
+    margin-down: 10px;
+}

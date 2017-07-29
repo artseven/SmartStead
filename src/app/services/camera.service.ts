@@ -14,40 +14,41 @@ export class CameraService {
 
 
   turnLeft () {
-    this.httpRouter
+    return this.httpRouter
     .post(
       this.baseUrl + '/api/camera/left',
-      {}
+      {username: 'admin', password: 'tenvis1@'},
+      {withCredentials: true}
     )
     .toPromise()
-    .then(res => res.json());
+    .then(res => res);
   }
 
   turnRight () {
-    this.httpRouter
+    return this.httpRouter
     .post(
       this.baseUrl + '/api/camera/right',
-      {}
+      {withCredentials: true}
     )
     .toPromise()
     .then(res => res);
   }
 
   turnDown () {
-    this.httpRouter
+   return this.httpRouter
     .post(
       this.baseUrl + '/api/camera/down',
-      {}
+      {withCredentials: true}
     )
     .toPromise()
     .then(res => res);
   }
 
   turnUp () {
-    this.httpRouter
+    return this.httpRouter
     .post(
       this.baseUrl + '/api/camera/up',
-      {}
+      {withCredentials: true}
     )
     .toPromise()
     .then(res => res);

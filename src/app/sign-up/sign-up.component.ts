@@ -12,7 +12,7 @@ export class SignUpComponent implements OnInit {
   newUser: any = {};
 
   errorMessage: string;
-
+  successMessage: string;
   constructor(
     private sessionThang: SessionService,
     private routerThang: Router
@@ -26,6 +26,7 @@ export class SignUpComponent implements OnInit {
         .then((userFromApi) => {
             this.routerThang.navigate(['/']);
             this.sessionThang.loggedIn(userFromApi);
+            this.successMessage = 'You successfully signed up'
         })
         .catch((errResponse) => {
             const apiInfo = errResponse.json();

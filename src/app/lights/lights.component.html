@@ -1,13 +1,13 @@
 <!-- <label for="md-slide-toggle">Switch</label>
 <md-slide-toggle primary #lightsToggle (click)="onToggleClicked()"></md-slide-toggle>
 <br> -->
-<label for="md-slider ">Dimmer</label>
-<button md-raised-button (click)="onDimmerSubmit()">
-    Submit
+<!-- <label for="md-slider ">Dimmer</label> -->
+<button md-raised-button (click)="onOnSubmit()"><i class="material-icons prefix">lightbulb_outline</i>
+    On
 </button>
-<button md-raised-button (click)="onOffSubmit()">
+<button md-raised-button warn (click)="onOffSubmit()"><i class="material-icons prefix">flash_off</i>
     Off
 </button>
-<button md-raised-button (click)="onOnSubmit()">
-    On
+<button md-raised-button (click)="onDimmerSubmit()"><i class="material-icons prefix">star_half</i>
+    Dim
 </button>
