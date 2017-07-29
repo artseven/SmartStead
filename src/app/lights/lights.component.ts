@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { LightService } from '../services/light.service';
+import { MdSnackBar } from '@angular/material';
 
 
 @Component({
@@ -9,25 +10,29 @@ import { LightService } from '../services/light.service';
   styleUrls: ['./lights.component.css']
 })
 export class LightsComponent implements OnInit {
-  clipMessage: Object = {
-    bridgeId: '001788fffe4c72e9', clipCommand: {
-      url:
-      '/api/0/groups/0/action', method: 'PUT', body:
-      { 'on': true, 'bri': 100 }
-    }
-  }
+  errorMessage: string;
+  myClipMessage: string;
   constructor(
     private httpLight: Http,
-    private lightThing: LightService
+    private lightThing: LightService,
+    private snackBar: MdSnackBar
   ) { }
 
   ngOnInit() {
 
     }
-
-  onDimmerSubmit(){
-    this.lightThing.submitDimmer(this.clipMessage)
-
+  toast(input) {
+    this.snackBar.open(input, '', {
+      duration: 4000
+    });
   }
 
+  onDimmerSubmit() {
+    this.lightThing.submitDimmer()
+    .then(() => { })
+      .catch((err) => {
+        this.errorMessage = 'Could not retrieve item details. Try again later.';
+      });
+    this.toast(this.myClipMessage + ' was sent');
+  }
 }
