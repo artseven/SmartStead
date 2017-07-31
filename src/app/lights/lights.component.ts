@@ -22,8 +22,8 @@ export class LightsComponent implements OnInit {
 
     }
   toast(input) {
-    this.snackBar.open(input, '', {
-      duration: 4000
+    this.snackBar.open(input, 'close', {
+      duration: 5000
     });
   }
 

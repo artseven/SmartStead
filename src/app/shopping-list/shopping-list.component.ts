@@ -121,10 +121,9 @@ export class ShoppingListComponent implements OnInit {
     .catch(err => console.log(err));
   }
 
-
   toast(input) {
-    this.snackBar.open(input, '', {
-      duration: 4000
+    this.snackBar.open(input, 'close', {
+      duration: 5000
     });
   }
 }

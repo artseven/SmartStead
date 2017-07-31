@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
-
+import { MdDialog} from '@angular/material';
 import { SessionService } from './session.service';
-
+import { DialogComponent} from './dialog/dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +12,10 @@ import { SessionService } from './session.service';
 })
 export class AppComponent {
   isLoggedIn: boolean = false;
-
   constructor(
     private sessionThang: SessionService,
-    private routerThang: Router
+    private routerThang: Router,
+    public dialog: MdDialog
   ) { }
 
   ngOnInit() {
@@ -33,6 +33,9 @@ export class AppComponent {
         .catch((err) => {
             this.routerThang.navigate(['/']);
         });
+      }
+  openDialog() {
+      this.dialog.open(DialogComponent);
   }
 
   logMeOut() {

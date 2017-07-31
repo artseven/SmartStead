@@ -68,6 +68,9 @@ import { DeviceCameraComponent } from './device-camera/device-camera.component';
     CalendarComponent,
     DeviceCameraComponent
   ],
+  entryComponents: [
+    DialogComponent
+  ],
   imports: [
     // Angular main modules
     BrowserModule,
