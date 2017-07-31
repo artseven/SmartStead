@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
-import { MdDialog} from '@angular/material';
+import { MdDialog, MdDialogRef} from '@angular/material';
 import { SessionService } from './session.service';
 import { DialogComponent} from './dialog/dialog.component';
-import { MdDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-root',
