@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { MdDialog} from '@angular/material';
 import { SessionService } from './session.service';
 import { DialogComponent} from './dialog/dialog.component';
+import { MdDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-root',
