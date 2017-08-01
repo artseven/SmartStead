@@ -49,6 +49,7 @@ import { DialogComponent } from './dialog/dialog.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { DeviceCameraComponent } from './device-camera/device-camera.component';
+import { RoundSliderComponent } from 'angular2-round-slider/dist';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { DeviceCameraComponent } from './device-camera/device-camera.component';
     DialogComponent,
     ShoppingListComponent,
     CalendarComponent,
-    DeviceCameraComponent
+    DeviceCameraComponent,
+    RoundSliderComponent
   ],
   entryComponents: [
     DialogComponent
