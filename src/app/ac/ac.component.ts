@@ -1,5 +1,4 @@
 import { Input, Component, OnInit } from '@angular/core';
-import { RoundSliderComponent } from 'angular2-round-slider/dist';
 
 
 @Component({
