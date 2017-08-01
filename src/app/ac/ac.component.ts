@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Directive, ElementRef, OnDestroy, Input, forwardRef, Component, OnInit } from '@angular/core';
 
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 declare var jQuery: any;
 declare var $: any;
