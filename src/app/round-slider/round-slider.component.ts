@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./round-slider.component.css']
 })
 export class RoundSliderComponent implements OnInit {
-
+  width: number;
+  
   constructor() { }
 
   ngOnInit() {
