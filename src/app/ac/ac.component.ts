@@ -12,13 +12,21 @@ import { MdSnackBar } from '@angular/material';
 
 export class ACComponent implements OnInit {
   errorMessage: string;
-  
+  temperature: Object;
   constructor(
     private thermostatThing: ThermostatService,
     private snackBar: MdSnackBar
   ) { }
 
   ngOnInit() {
+    this.thermostatThing.getThermostat()
+      .then((currentTemp) => {
+        this.temperature = currentTemp;
+        console.log(currentTemp);
+        // console.log('ID of the last element in array' + itemsFromApi[itemsFromApi.length]._id);
+      })
+      .catch((errResponse) => {
+      });
   }
 
   onTemperatureSubmit() {

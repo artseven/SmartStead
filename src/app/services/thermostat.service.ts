@@ -24,7 +24,7 @@ export class ThermostatService {
   getThermostat() {
     return this.httpRouter
       .post(
-      this.baseUrl + '/api/nest/stats',
+      this.baseUrl + '/api/nest/current',
       {withCredentials : true}
       )
       .toPromise()
