@@ -1,4 +1,6 @@
 import { Input, Component, OnInit } from '@angular/core';
+import { ThermostatService } from '../services/thermostat.service';
+import { MdSnackBar } from '@angular/material';
 
 
 @Component({
@@ -10,19 +12,28 @@ import { Input, Component, OnInit } from '@angular/core';
 
 export class ACComponent implements OnInit {
   errorMessage: string;
-  toast;
-  constructor() { }
+  
+  constructor(
+    private thermostatThing: ThermostatService,
+    private snackBar: MdSnackBar
+  ) { }
 
   ngOnInit() {
   }
 
-  onThermostatSubmit() {
-    this.thermostatThing.submitOff()
+  onTemperatureSubmit() {
+    this.thermostatThing.submitThermostat()
       .then(() => { })
       .catch((err) => {
         this.errorMessage = 'Could not retrieve item details. Try again later.';
       });
-    this.toast('Turning living-room lights OFF');
+    this.toast('Temperature has changed');
+  }
+
+  toast(input) {
+    this.snackBar.open(input, 'close', {
+      duration: 5000
+    });
   }
 
 }

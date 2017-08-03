@@ -38,6 +38,7 @@ import { SessionService} from './session.service';
 import { CartService } from './services/cart.service';
 import { CameraService } from './services/camera.service';
 import { LightService } from './services/light.service';
+import { ThermostatService } from './services/thermostat.service'
 // routes
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -98,7 +99,8 @@ import { RoundSliderComponent } from './round-slider/round-slider.component';
     SessionService,
     CartService,
     CameraService,
-    LightService
+    LightService,
+    ThermostatService
   ],
   bootstrap: [AppComponent]
 })
