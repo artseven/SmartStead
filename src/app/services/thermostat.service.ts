@@ -21,4 +21,13 @@ export class ThermostatService {
       .then(res => res.json());
   }
 
+  getThermostat() {
+    return this.httpRouter
+      .post(
+      this.baseUrl + '/api/nest/stats',
+      {withCredentials : true}
+      )
+      .toPromise()
+      .then(res => res.json());
+  }
 }

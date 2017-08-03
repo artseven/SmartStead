@@ -30,6 +30,16 @@ export class ACComponent implements OnInit {
     this.toast('Temperature has changed');
   }
 
+  onGetSubmit() {
+    this.thermostatThing.getThermostat()
+      .then(() => { })
+      .catch((err) => {
+        this.errorMessage = 'Could not retrieve item details. Try again later.';
+      });
+    this.toast('Fetching NEST info');
+  }
+
+
   toast(input) {
     this.snackBar.open(input, 'close', {
       duration: 5000
